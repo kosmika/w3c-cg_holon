@@ -35,7 +35,7 @@ spec:
 
 **Status:** Editor's Draft · W3C Holon Community Group  
 **Base IRI:** `http://w3id.org/holon/spec/`  
-**Repository:** [GDrive/hga/](https://drive.google.com/drive/folders/1Uipto3dReB26JwJ3nrYt2-yc_5iaB_TP)
+**Repository:** [/hga/](../hga/)
 
 Each DataBook is a self-describing Markdown file containing normative
 OWL 2 vocabulary, SHACL 1.2 shapes, SPARQL fallbacks, and prose
@@ -48,8 +48,8 @@ depend on earlier ones.
 
 | # | File | IRI | Conformance class | Link |
 |---|---|---|---|---|
-| 0.1 | `hga-pass0-manifest.databook.md` | `http://w3id.org/holon/spec/manifest` | core | [↗](https://drive.google.com/file/d/1rHxOZfFksq_RTAt8j2p7kv6UcK9JLfiT/view) |
-| 0.2 | `hga-pass0-namespace-registry.databook.md` | `http://w3id.org/holon/spec/namespace-registry` | core | [↗](https://drive.google.com/file/d/1VibLQzVMgi9Iyuw3HEzzBu5BgNurXeuE/view) |
+| 0.1 | `hga-pass0-manifest.databook.md` | `http://w3id.org/holon/spec/manifest` | core | [↗]hga-pass-c-events.databook.md |
+| 0.2 | `hga-pass0-namespace-registry.databook.md` | `http://w3id.org/holon/spec/namespace-registry` | core | [↗](hga-pass0-namespace-registry.databook.md) |
 
 ### [0.1 — Manifest](hga-pass0-namespace-registry.databook.md)
 **Path:** `hga/hga-pass0-manifest.databook.md`  
@@ -77,8 +77,8 @@ to `http://w3id.org/holon/{sub}/`.
 
 | # | File | IRI | Conformance class | Link |
 |---|---|---|---|---|
-| A.1 | `hga-pass-a-ontology-header.databook.md` | `http://w3id.org/holon/spec/ontology-header` | core | [↗](https://drive.google.com/file/d/1wC7Xang1CZ-hKbJiiey8qTmgfVbNBKtg/view) |
-| A.2 | `hga-pass-a-skos-taxonomies.databook.md` | `http://w3id.org/holon/spec/skos-taxonomies` | core | [↗](https://drive.google.com/file/d/1SZyZ16zr9Ie8xPnD0PtgnaUX-WOQFuIa/view) |
+| A.1 | `hga-pass-a-ontology-header.databook.md` | `http://w3id.org/holon/spec/ontology-header` | core | [↗](hga-pass0-namespace-registry.databook.md) |
+| A.2 | `hga-pass-a-skos-taxonomies.databook.md` | `http://w3id.org/holon/spec/skos-taxonomies` | core | [↗](hga-pass-a-skos-taxonomies.databook.md) |
 
 ### [A.1 — Ontology Header](hga-pass-a-ontology-header.databook.md)
 **Path:** `hga/hga-pass-a-ontology-header.databook.md`  
@@ -107,8 +107,8 @@ later passes reference via `skos:inScheme`.
 
 | # | File | IRI | Conformance class | Link |
 |---|---|---|---|---|
-| B.1 | `hga-pass-b-core-structure.databook.md` | `http://w3id.org/holon/spec/core-structure` | core | [↗](https://drive.google.com/file/d/1ur0Tn10Z32fsKE0-WxQGeKlH1Rw17bM6/view) |
-| B.2 | `hga-pass-b-portals.databook.md` | `http://w3id.org/holon/spec/portals` | core | [↗](https://drive.google.com/file/d/1X9cEr8vxOTXpAwhIrtbpqTaB7fr9cBPw/view) |
+| B.1 | `hga-pass-b-core-structure.databook.md` | `http://w3id.org/holon/spec/core-structure` | core | [↗](hga-pass-a-skos-taxonomies.databook.md) |
+| B.2 | `hga-pass-b-portals.databook.md` | `http://w3id.org/holon/spec/portals` | core | [↗](hga-pass-b-portals.databook.md) |
 
 ### [B.1 — Core Structure](hga-pass-a-skos-taxonomies.databook.md)
 **Path:** `hga/hga-pass-b-core-structure.databook.md`  
@@ -138,8 +138,8 @@ validation and SPARQL traversal queries.
 
 | # | File | IRI | Conformance class | Link |
 |---|---|---|---|---|
-| C.1 | `hga-pass-c-events.databook.md` | `http://w3id.org/holon/spec/events` | core | [↗](https://drive.google.com/file/d/11tPZVdQZ_MG_B2fjnU8IWjMJEw3HhFmG/view) |
-| C.2 | `hga-pass-c-provenance.databook.md` | `http://w3id.org/holon/spec/provenance` | core | [↗](https://drive.google.com/file/d/1SLRh-6qQhghEKr-oglSPDxCHCdgTfekz/view) |
+| C.1 | `hga-pass-c-events.databook.md` | `http://w3id.org/holon/spec/events` | core | [↗](hga-pass-b-portals.databook.md) |
+| C.2 | `hga-pass-c-provenance.databook.md` | `http://w3id.org/holon/spec/provenance` | core | [↗](hga-pass-c-provenance.databook.md) |
 
 ### [C.1 — Events](hga-pass-c-events.databook.md)
 **Path:** `hga/hga-pass-c-events.databook.md`  
@@ -169,9 +169,9 @@ to `hprov:IngestionActivity` instances.
 
 | # | File | IRI | Conformance class | Link |
 |---|---|---|---|---|
-| D.1 | `hga-pass-d-bayesian.databook.md` | `http://w3id.org/holon/spec/bayesian` | bayesian | [↗](https://drive.google.com/file/d/1sbB_y08j4KcYTO7OztJ8PMENsx-ooPXV/view) |
-| D.2 | `hga-pass-d-policy.databook.md` | `http://w3id.org/holon/spec/policy` | extended | [↗](https://drive.google.com/file/d/1alEr3V-Ou9tSFdeHDkMNBxb4rPFb4Vot/view) |
-| D.3 | `hga-pass-d-vc.databook.md` | `http://w3id.org/holon/spec/verifiable-credentials` | extended | [↗](https://drive.google.com/file/d/1oqoOFkmsbNlQ04Qwr6jvzouUJ-kXLSqf/view) |
+| D.1 | `hga-pass-d-bayesian.databook.md` | `http://w3id.org/holon/spec/bayesian` | bayesian | [↗](hga-pass-d-bayesian.databook.md) |
+| D.2 | `hga-pass-d-policy.databook.md` | `http://w3id.org/holon/spec/policy` | extended | [↗](hga-pass-d-policy.databook.md) |
+| D.3 | `hga-pass-d-vc.databook.md` | `http://w3id.org/holon/spec/verifiable-credentials` | extended | [↗](hga-pass-d-vc.databook.md) |
 
 ### [D.1 — Bayesian / Active Inference](hga-pass-d-bayesian.databook.md)
 **Path:** `hga/hga-pass-d-bayesian.databook.md`  
@@ -209,8 +209,8 @@ a stub — full implementation pending W3C VC 2.0 stabilisation.
 
 | # | File | IRI | Version | Conformance class | Link |
 |---|---|---|---|---|---|
-| E.1 | `hga-pass-e-markov-blanket_databook.md` | `http://w3id.org/holon/spec/markov-blanket` | 0.2.0 | markov | [↗](https://drive.google.com/file/d/1OKHFShLSU7xICquo9UwfyuKqHO7K11me/view) |
-| E.2 | `hga-pass-e-projection.databook.md` | `http://w3id.org/holon/spec/projection` | 0.1.0 | projection | [↗](https://drive.google.com/file/d/1Ka9zAvV3eqPdefISlHekK9HRZUjPj013/view) |
+| E.1 | `hga-pass-e-markov-blanket_databook.md` | `http://w3id.org/holon/spec/markov-blanket` | 0.2.0 | markov | [↗](hga-pass-e-markov-blanket_databook.md) |
+| E.2 | `hga-pass-e-projection.databook.md` | `http://w3id.org/holon/spec/projection` | 0.1.0 | projection | [↗](hga-pass-e-projection.databook.md) |
 
 ### [E.1 — Markov Blanket (v0.2.0)](hga-pass-e-markov-blanket_databook.md)
 **Path:** `hga/hga-pass-e-markov-blanket_databook.md`  
