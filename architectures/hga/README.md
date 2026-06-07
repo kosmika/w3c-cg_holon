@@ -80,7 +80,7 @@ to `http://w3id.org/holon/{sub}/`.
 | A.1 | `hga-pass-a-ontology-header.databook.md` | `http://w3id.org/holon/spec/ontology-header` | core | [↗](https://drive.google.com/file/d/1wC7Xang1CZ-hKbJiiey8qTmgfVbNBKtg/view) |
 | A.2 | `hga-pass-a-skos-taxonomies.databook.md` | `http://w3id.org/holon/spec/skos-taxonomies` | core | [↗](https://drive.google.com/file/d/1SZyZ16zr9Ie8xPnD0PtgnaUX-WOQFuIa/view) |
 
-### [A.1 — Ontology Header]hga-pass-a-ontology-header.databook.md)
+### [A.1 — Ontology Header](hga-pass-a-ontology-header.databook.md)
 **Path:** `hga/hga-pass-a-ontology-header.databook.md`  
 **Namespace:** `holon:` = `http://w3id.org/holon/`
 
@@ -184,7 +184,7 @@ within holonic agents — the mathematical layer grounding `hmk:`
 Markov blanket dynamics. Conformance class `hspec:HGABayesian` is a
 prerequisite for Pass E.
 
-### [D.2 — Policy (ODRL)](hga-pass-d-policy.databook.md)
+### [D.2 — Policy - ODRL](hga-pass-d-policy.databook.md)
 **Path:** `hga/hga-pass-d-policy.databook.md`  
 **Namespace:** `hpol:` = `http://w3id.org/holon/policy/`
 
