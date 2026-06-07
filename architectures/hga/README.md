@@ -31,7 +31,7 @@ spec:
 
 ---
 
-## Holon Graph Architecture — Specification DataBooks
+# Holon Graph Architecture — Specification DataBooks
 
 **Status:** Editor's Draft · W3C Holon Community Group  
 **Base IRI:** `http://w3id.org/holon/spec/`  
