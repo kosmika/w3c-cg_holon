@@ -1,0 +1,299 @@
+/**
+ * databook push — transfer RDF blocks from a DataBook to a SPARQL triplestore.
+ *
+ * Changes in v1.4.2:
+ *
+ *   1. Empty-string --graph guard:
+ *      `--graph ""` now exits with an error rather than silently falling
+ *      through to the fragment-addressing rule.
+ *
+ *   2. Meta graph push respects --merge:
+ *      Previously always used gspPut (HTTP PUT) for the #meta graph.
+ *      When --merge is set, gspPost (HTTP POST) is used instead, matching
+ *      the behaviour of data block pushes.
+ *
+ *   3. resolveGraphIri — restored fragment-addressing + processors.toml step:
+ *      Priority chain (v1.4.2):
+ *        1. --graph <iri>                    explicit CLI override
+ *        2. frontmatter graph.named_graph    per-document declaration
+ *        3. processors.toml named_graph      per-environment
+ *        4. {databookId}#{block.id}          fragment-addressing  ← restored
+ *        5. null → GSP ?default              bare fallback
+ */
+
+import { loadDataBookFile, PUSHABLE_LABELS, blockPayload } from '../lib/parser.js';
+import { resolveEncoding, writeOutput }                     from '../lib/encoding.js';
+import { getDefaultEndpoint, inferGspEndpoint, inferUpdateEndpoint, getDefaultNamedGraph } from '../lib/config.js';
+import { resolveAuth } from '../lib/auth.js';
+import { resolveServer, listServers, LOCALHOST_FUSEKI, datasetToEndpoints } from '../lib/serverConfig.js';
+import { gspPut, gspPost, sparqlUpdate, contentTypeForLabel, checkResponse } from '../lib/gsp.js';
+import { frontmatterToTurtle } from '../lib/reify.js';
+
+export async function runPush(filePath, opts) {
+  const {
+    server: serverName,
+    endpoint: endpointOpt,
+    gspEndpoint: gspOpt,
+    blockId: blockIdOpts = [],
+    graph: graphOpt,
+    meta = true,
+    merge = false,
+    auth: authOpt,
+    publish: publishUrl,
+    dryRun = false,
+    verbose = false,
+  } = opts;
+
+  if (dryRun) opts.verbose = true;
+
+  // ── Validate --graph early: reject explicit empty string ──────────────────────
+  if (graphOpt !== undefined && graphOpt !== null && graphOpt.trim() === '') {
+    die('--graph requires a non-empty IRI; pass no flag to use the default graph', 2);
+  }
+
+  // ── HTTP publish mode (--publish) ─────────────────────────────────────────────
+  if (publishUrl) {
+    let content;
+    try { content = (await import('fs')).readFileSync(filePath, 'utf8'); }
+    catch (e) { die(e.message, 2); }
+
+    const auth = authOpt ?? process.env.DATABOOK_AUTH ?? null;
+    const headers = { 'Content-Type': 'application/x.databook+markdown' };
+    if (auth) {
+      headers['Authorization'] = auth.startsWith('Bearer ') || auth.startsWith('Basic ')
+        ? auth
+        : auth.includes(':') ? `Basic ${Buffer.from(auth).toString('base64')}` : `Bearer ${auth}`;
+    }
+
+    if (dryRun) {
+      process.stderr.write(`[push] dry-run: PUT ${publishUrl}\n`);
+      process.stderr.write(`[push] Content-Type: application/x.databook+markdown\n`);
+      process.stderr.write(`[push] Content-Length: ${Buffer.byteLength(content)}\n`);
+      return;
+    }
+
+    let response;
+    try {
+      response = await fetch(publishUrl, { method: 'PUT', headers, body: content });
+    } catch (e) { die(`publish failed: ${e.message}`, 1); }
+
+    if (!response.ok && response.status !== 201) {
+      die(`publish returned HTTP ${response.status}: ${publishUrl}`, 1);
+    }
+    process.stderr.write(`published: ${publishUrl} (${response.status} ${response.statusText})\n`);
+    return;
+  }
+
+  // ── Resolve named server config ───────────────────────────────────────────────
+  let serverCfg = null;
+  if (serverName) {
+    if (serverName === 'list') {
+      const servers = listServers();
+      if (servers.length === 0) {
+        process.stdout.write('No servers configured in processors.toml.\n');
+      } else {
+        for (const s of servers) {
+          process.stdout.write(`  ${s.name.padEnd(16)} ${s.endpoint ?? '(no endpoint)'}${s.auth ? '  auth: (set)' : ''}\n`);
+        }
+      }
+      process.exit(0);
+    }
+    try { serverCfg = resolveServer(serverName); }
+    catch (e) { die(e.message, 2); }
+    if (verbose) {
+      log(`[push] Server '${serverName}': endpoint=${serverCfg.endpoint} gsp=${serverCfg.gsp ?? '(inferred)'}`);
+    }
+  }
+
+  // ── Load DataBook ─────────────────────────────────────────────────────────────
+  let db;
+  try { db = loadDataBookFile(filePath); }
+  catch (e) { die(e.message, 2); }
+
+  const fm = db.frontmatter;
+
+  // ── Resolve endpoints ─────────────────────────────────────────────────────────
+  const datasetCfg     = opts.dataset ? datasetToEndpoints(opts.dataset) : null;
+  const sparqlEndpoint = endpointOpt ?? serverCfg?.endpoint ?? datasetCfg?.endpoint ?? getDefaultEndpoint() ?? LOCALHOST_FUSEKI.endpoint;
+
+  let gspEndpoint = gspOpt ?? serverCfg?.gsp ?? datasetCfg?.gsp;
+  if (!gspEndpoint) {
+    try   { gspEndpoint = inferGspEndpoint(sparqlEndpoint); }
+    catch { gspEndpoint = LOCALHOST_FUSEKI.gsp; }
+  }
+
+  const updateEndpoint = inferUpdateEndpoint(sparqlEndpoint);
+  const auth = resolveAuth(sparqlEndpoint, authOpt ?? serverCfg?.auth);
+
+  // ── Select blocks ─────────────────────────────────────────────────────────────
+  const blockIds = Array.isArray(blockIdOpts) ? blockIdOpts : [blockIdOpts].filter(Boolean);
+  let selectedBlocks;
+
+  if (blockIds.length > 0) {
+    selectedBlocks = [];
+    for (const bid of blockIds) {
+      const block = db.blocks.find(b => b.id === bid);
+      if (!block) {
+        const available = db.blocks.map(b => b.id).filter(Boolean);
+        const hint = available.length > 0
+          ? `\n  Available block IDs: ${available.join(', ')}`
+          : '\n  No named blocks found in document. Check that <!-- databook:id: ... --> annotations are present.';
+        die(`no block with id '${bid}'${hint}`, 2);
+      }
+      selectedBlocks.push(block);
+    }
+  } else {
+    selectedBlocks = db.blocks.filter(b => PUSHABLE_LABELS.has(b.label));
+  }
+
+  // Validate --graph constraint (only when a real non-empty IRI is given)
+  const effectiveGraphOpt = (graphOpt !== undefined && graphOpt !== null && graphOpt.trim() !== '')
+    ? graphOpt : undefined;
+
+  if (effectiveGraphOpt && selectedBlocks.length > 1) {
+    const ids = selectedBlocks.map(b => b.id ?? '(unnamed)').join(', ');
+    die(
+      `--graph applies to a single block but ${selectedBlocks.length} blocks are selected (${ids}).\n` +
+      `  Use --block-id <id> to target a specific block.`,
+      2
+    );
+  }
+
+  const pushableBlocks = selectedBlocks.filter(b => PUSHABLE_LABELS.has(b.label));
+  const skippedBlocks  = selectedBlocks.filter(b => !PUSHABLE_LABELS.has(b.label));
+
+  if (verbose && skippedBlocks.length > 0) {
+    for (const b of skippedBlocks)
+      log(`[push] SKIP  block '${b.id ?? '(unlabelled)'}' (${b.label}) — not a pushable type`);
+  }
+
+  // ── Execute pushes ────────────────────────────────────────────────────────────
+  let pushed = 0, failed = 0;
+  const databookId = fm.id;
+
+  for (const block of pushableBlocks) {
+    const graphIri = resolveGraphIri(block, effectiveGraphOpt, fm, databookId, db.filePath, pushableBlocks.length);
+    const payload  = blockPayload(block);
+
+    if (block.label === 'sparql-update') {
+      await executeSparlqUpdate(block, payload, updateEndpoint, auth, dryRun, verbose);
+      pushed++;
+      continue;
+    }
+
+    const contentType = contentTypeForLabel(block.label);
+    const method      = merge ? 'POST' : 'PUT';
+
+    if (verbose || dryRun) {
+      logBlockOp(method, gspEndpoint, graphIri, contentType, payload, dryRun);
+    }
+
+    if (!dryRun) {
+      try {
+        const result = method === 'PUT'
+          ? await gspPut(gspEndpoint, graphIri, payload, contentType, auth)
+          : await gspPost(gspEndpoint, graphIri, payload, contentType, auth);
+
+        checkResponse(result, `block '${block.id}'`);
+        if (verbose) log(`[push]       Status: ${result.status}`);
+        pushed++;
+      } catch (e) {
+        process.stderr.write(`error: ${e.message}\n`);
+        failed++;
+      }
+    } else {
+      pushed++;
+    }
+  }
+
+  // ── Push metadata graph (--meta, default on) ──────────────────────────────────
+  if (meta) {
+    const metaIri = databookId ? `${databookId}#meta` : null;
+    if (metaIri) {
+      const metaTurtle = frontmatterToTurtle(fm, db.filePath);
+      if (verbose || dryRun) {
+        // v1.4.2: meta graph method follows --merge flag
+        logBlockOp(merge ? 'POST' : 'PUT', gspEndpoint, metaIri, 'text/turtle', metaTurtle, dryRun, true);
+      }
+      if (!dryRun) {
+        try {
+          // v1.4.2: meta graph respects --merge flag
+          const result = merge
+            ? await gspPost(gspEndpoint, metaIri, metaTurtle, 'text/turtle', auth)
+            : await gspPut(gspEndpoint, metaIri, metaTurtle, 'text/turtle', auth);
+          checkResponse(result, 'meta graph');
+          if (verbose) log(`[push]       Status: ${result.status}`);
+        } catch (e) {
+          process.stderr.write(`warn: meta graph push failed: ${e.message}\n`);
+        }
+      }
+    }
+  }
+
+  // ── Summary ───────────────────────────────────────────────────────────────────
+  if (verbose || dryRun) {
+    const metaNote = meta && databookId ? '  (1 meta graph)' : '';
+    log(`[push] ${pushed} block${pushed !== 1 ? 's' : ''} pushed, ${skippedBlocks.length} skipped, ${failed} failed${metaNote}`);
+  }
+
+  if (failed > 0 && pushed > 0)  process.exit(1);
+  if (failed > 0 && pushed === 0) process.exit(2);
+}
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
+/**
+ * Determine the target named graph IRI for a block.
+ *
+ * Priority (v1.4.2):
+ *   1. Explicit --graph <iri>          per-invocation CLI override
+ *   2. frontmatter graph.named_graph   per-document declaration
+ *   3. processors.toml named_graph     per-environment (getDefaultNamedGraph())
+ *   4. {databookId}#{block.id}         fragment-addressing  ← restored in v1.4.2
+ *   5. null → GSP ?default             bare fallback
+ */
+function resolveGraphIri(block, graphOpt, fm, databookId, filePath, totalBlocks = 1) {
+  // 1. Explicit --graph
+  if (graphOpt) return graphOpt;
+
+  // 2. Frontmatter graph.named_graph (single-block convenience)
+  if (fm.graph?.named_graph && totalBlocks === 1) return fm.graph.named_graph;
+
+  // 3. processors.toml default_endpoint.named_graph (per-environment)
+  //    Set named_graph = "urn:x-arq:DefaultGraph" to route all pushes to
+  //    Jena's default graph without per-document frontmatter.
+  const configGraph = getDefaultNamedGraph();
+  if (configGraph) return configGraph;
+
+  // 4. Fragment-addressing: {databookId}#{block.id}
+  //    Mirrors pull's resolveGraphIris() — push/pull symmetric by default.
+  if (databookId && block.id) return `${databookId}#${block.id}`;
+
+  // 5. Null → GSP ?default
+  return null;
+}
+
+async function executeSparlqUpdate(block, payload, updateEndpoint, auth, dryRun, verbose) {
+  if (verbose || dryRun) {
+    log(`[push] SPARQL-UPDATE  ${updateEndpoint}`);
+    if (dryRun) log(`[push]       [not sent]`);
+  }
+  if (!dryRun) {
+    const result = await sparqlUpdate(updateEndpoint, payload, auth);
+    checkResponse(result, `block '${block.id}' (sparql-update)`);
+    if (verbose) log(`[push]       Status: ${result.status}`);
+  }
+}
+
+function logBlockOp(method, endpoint, graphIri, contentType, payload, dryRun, isMeta = false) {
+  const graphLabel = graphIri === null ? '(default graph)' : graphIri;
+  const lines = payload.split('\n').filter(l => l.trim()).length;
+  log(`[push] ${method.padEnd(4)} ${endpoint}`);
+  log(`[push]       ?graph=${graphLabel}`);
+  log(`[push]       Content-Type: ${contentType}`);
+  log(`[push]       Lines: ~${lines}`);
+  if (dryRun) log(`[push]       Status: [not sent]`);
+}
+
+function log(msg)          { process.stderr.write(msg + '\n'); }
+function die(msg, code=2)  { process.stderr.write(`error: ${msg}\n`); process.exit(code); }
