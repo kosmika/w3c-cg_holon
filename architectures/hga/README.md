@@ -41,13 +41,14 @@ process:
 
 ---
 
-### HGA Primer
+### HGA Primer and Vocbulary Summary
 
 This provides an introduction to the Holon Graph Architecture (HGA), walking the reader through an example showing a medical rounds
 scenario as it illustrates various components of the HGA. This assumes knowledge of RDF, SHACL, and SPARQL, and is intended primarily
 to showcase a typical use case for a holonic system. 
 
-[Holon Graph Architecture Primer](hga-primer.databook.md).
+* [Holon Graph Architecture Primer](hga-primer.databook.md)
+* [HGA Vocabulary Summary](hga-vocabulary-summary_databook.md)
 
 --
 
