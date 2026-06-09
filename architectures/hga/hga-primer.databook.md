@@ -46,6 +46,10 @@ process:
     role: orchestrator
 ---
 
+---
+# Holon Graph Architecture: A Primer
+---
+
 ## § 0  How to Read This Primer
 
 > *A practitioner's guide to the Holon Graph Architecture — what it is,
