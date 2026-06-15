@@ -129,34 +129,34 @@ External vocabularies used normatively:
 
 ## 1.1 Upper Ontology Alignment
 
-HGA defines five specialised Holon subtypes. Each is informatively aligned with
-the PROV-O vocabulary (used normatively in HGA's provenance layer) and optionally
-alignable to gUFO (Unified Foundational Ontology) for deployments that require
-formal upper ontology grounding. The gUFO alignment is non-normative in HGA
-itself; it becomes normative when a symbolic governance layer is applied over
-an HGA deployment and requires a formal disjoint partition of the entity space.
+HGA is agnostic to specific upper ontologies beyond PROV-O (which is used
+normatively in HGA's provenance layer). The five specialised Holon subtypes
+each correspond to a broadly-recognised conceptual category that can be mapped
+to whichever upper ontology a deployment adopts — whether gUFO, BFO/CCO, GIST,
+DOLCE, or others. Deployment-specific upper ontology bindings are outside the
+scope of this specification.
 
-| Holon subtype | PROV-O alignment | gUFO alignment | Role in HGA pipeline |
+| Holon subtype | PROV-O alignment (normative) | Conceptual category | Role in HGA pipeline |
 |---|---|---|---|
-| `holon:AgentHolon` | `prov:Agent` | `gufo:Agent` | Participants that generate or receive events; hold beliefs via Markov blankets |
-| `holon:OrganisationHolon` | `prov:Agent` (collective) | `gufo:Collective` | Collective entities; subclass of AgentHolon in HGA (see note) |
-| `holon:PlaceHolon` | `prov:Entity` | `gufo:Site` / `gufo:SpatialRegion` | Physical or logical locations; boundary targets |
-| `holon:DataHolon` | `prov:Entity` | `gufo:InformationObject` | Information-bearing artefacts; produced and consumed by the pipeline |
-| `holon:ProcessHolon` | `prov:Activity` | `gufo:Process` | Ongoing workflows; pipeline runs and staged operations |
+| `holon:AgentHolon` | `prov:Agent` | Individual actor | Participants that generate or receive events; hold beliefs via Markov blankets |
+| `holon:OrganisationHolon` | `prov:Agent` (collective) | Collective actor | Collective entities; subclass of AgentHolon in HGA (see note) |
+| `holon:PlaceHolon` | `prov:Entity` | Spatial or logical location | Physical or logical places; boundary and portal targets |
+| `holon:DataHolon` | `prov:Entity` | Information-bearing artefact | Documents, records, reports; produced and consumed by the pipeline |
+| `holon:ProcessHolon` | `prov:Activity` | Ongoing process or workflow | Pipeline runs, staged operations, state machines |
 
-All alignments in this table are informative. Implementations that adopt gUFO
-grounding MUST ensure class declarations chain to the specified gUFO upper
-category; the HGA vocabulary specification does not enforce this directly.
+The PROV-O alignments in this table are normative. The conceptual category
+descriptions are informative and are intended to guide upper ontology binding
+decisions in deployment contexts; they do not prescribe a specific framework.
 
 > **Note on OrganisationHolon and AgentHolon:** In HGA, `holon:OrganisationHolon`
 > is a subclass of `holon:AgentHolon` — reflecting that organisations participate
-> in events and can generate or receive messages as collective actors. In
-> gUFO-grounded deployments, however, `gufo:Agent` and `gufo:Collective` are
-> disjoint upper categories. Implementations adopting gUFO grounding SHOULD
-> treat the subclass relationship as a participation-capability inheritance
-> (organisations *act* like agents at the event level) rather than an
-> ontological identity claim, and SHOULD NOT infer that an
-> `holon:OrganisationHolon` instance is also a `gufo:Agent` instance.
+> in events and can generate or receive messages as collective actors. This
+> subclass relationship expresses *event-participation capability*, not a claim
+> that organisations are agents in the same sense as individual actors.
+> Deployments that bind to a strict upper ontology should consult that
+> ontology's treatment of individual agents versus collective entities and
+> apply appropriate mapping constraints at the deployment level; HGA does not
+> enforce any particular treatment here.
 
 ---
 
@@ -240,7 +240,7 @@ geometry bindings are a non-normative domain extension (see Annex C).
 
 Wraps a document, dataset, report, or knowledge artefact as a holon.
 Navigated and consumed rather than acted upon. SHOULD declare a payloadGraph.
-Informatively aligned with `prov:Entity` and `gufo:InformationObject`.
+Informatively aligned with `prov:Entity` (see §1.1).
 
 **Pipeline-internal DataHolons:** The HGA pipeline itself produces DataHolons
 at multiple stages. `holon:GroundingRecord` instances (stage 2 entity grounding),
