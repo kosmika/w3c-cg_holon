@@ -117,6 +117,15 @@ terminal segment.
 overlay. Two DataBooks may share the same path prefix (folder) while having
 entirely different IRI key structures.
 
+**The terminal segment is the canonical filename stem.** A DataBook with
+`path: causalspark/demos/westbridge-fc-press-release` SHOULD be stored as
+`westbridge-fc-press-release.databook.md` in a `causalspark/demos/` directory.
+This mirrors GitHub path conventions: the file's location in the repository
+tree corresponds directly to its `path` value. `databook push` emits a warning
+when the source filename stem does not match the terminal path segment.
+`databook pull --databook-id` uses the terminal segment as the default output
+filename when `--out` is not specified.
+
 **Path conventions:**
 
 - Segments use kebab-case: `press-releases` not `PressReleases` or `press_releases`
@@ -502,6 +511,7 @@ SPARQL pattern.
 
 - [ ] `path` uses forward slashes only — no backslashes, no leading or trailing slash
 - [ ] All path segments are kebab-case and lowercase
+- [ ] Terminal segment matches the source filename stem (e.g. `path: foo/bar/my-databook` → file is `my-databook.databook.md`); `databook push` warns on mismatch
 - [ ] `path` terminal segment is meaningful and stable
 
 **Push-time index checks:**
@@ -523,7 +533,7 @@ SPARQL pattern.
 
 | Section | Change |
 |---|---|
-| §Frontmatter Reference | Add `path` field (optional); add to recommended fields table |
+| §Frontmatter Reference | Add `path` field (optional); terminal segment is canonical filename stem; add to recommended fields table |
 | §Vocabulary | Add `db:IndexGraph`, `db:indexGraph`, `db:namedGraph`, `db:path`, `db:indexedAt`, `db:version`; formalise `db:DataBook` |
 | §Push Behaviour (new) | Document index upsert as standard post-push step; `--index-graph` CLI flag; profile `indexGraph` field |
 | §Delete Behaviour (new) | Document index record removal on delete; `databook index --repair` command |
@@ -533,3 +543,4 @@ SPARQL pattern.
 | §CLI — `databook index --repair` | New subcommand for index reconciliation |
 | §Validation | Add `path` field checks; push-time and delete-time index checklist |
 | §HolonBridge Integration | `GET /datasets` annotation; new `GET /datasets/{name}/index` endpoint with `?path=` filter |
+
