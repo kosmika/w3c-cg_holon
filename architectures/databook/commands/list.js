@@ -275,12 +275,9 @@ function renderTree(rows, verbose, quiet) {
     node[terminal]._items.push(row);
   }
 
-  if (rootRows.length > 0) {
-    process.stdout.write('(root)\n');
-    for (const r of rootRows) {
-      const label = verbose ? r.id : r.title;
-      process.stdout.write(`  ${label} (v${r.version}, ${r.created})\n`);
-    }
+  for (const r of rootRows) {
+    const label = verbose ? r.id : r.title;
+    process.stdout.write(`${label} (v${r.version}, ${r.created})\n`);
   }
 
   renderNode(tree, '', verbose);
