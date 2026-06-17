@@ -269,7 +269,6 @@ SELECT ?agent WHERE {
   ?agent a hol:Character .
 }
 ```
-```
 
 Databooks can carry **all components of an in-flight holon**, or serve as **data holons** — storing taxonomy, schema, queries, update patterns, and other application metadata.
 
