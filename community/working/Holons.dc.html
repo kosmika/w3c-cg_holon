@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --type-display: 120px;
+      --type-title: 76px;
+      --type-h2: 56px;
+      --type-body: 36px;
+      --type-small: 28px;
+      --type-label: 24px;
+      --pad-x: 120px;
+      --pad-y: 96px;
+      --gap-lg: 48px;
+      --gap-md: 32px;
+      --bg: #0E0C0A;
+      --bg2: #181512;
+      --bg-warm: oklch(22% 0.07 72);
+      --bg-cool: oklch(18% 0.05 195);
+      --fg: #EDE8E1;
+      --fg-dim: oklch(55% 0.02 72);
+      --gold: oklch(74% 0.14 74);
+      --teal: oklch(65% 0.10 195);
+    }
+    body { margin: 0; padding: 0; background: #0E0C0A; }
+  </style>
+</helmet>
+
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <!-- SLIDE 01: TITLE -->
+  <section data-label="01" data-screen-label="01 — Title" data-speaker-notes="Welcome. Today we're exploring one of the most quietly profound ideas in science and philosophy — the concept of the holon. By the end of this talk, you'll start seeing this pattern everywhere.">
+    <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center;">
+      <div style="padding: 0 var(--pad-x); flex: 1; display: flex; flex-direction: column; gap: 28px;">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold);">Systems Thinking</span>
+        <h1 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-display); font-weight: 300; color: var(--fg); line-height: 0.92; margin: 0; letter-spacing: -2px;">Holons</h1>
+        <div style="width: 80px; height: 1px; background: var(--gold); opacity: 0.7;"></div>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-h2); font-weight: 300; color: var(--fg); margin: 0; opacity: 0.75; letter-spacing: 0.04em;">An Introduction</p>
+      </div>
+      <div style="flex: 0 0 580px; height: 100%; display: flex; align-items: center; justify-content: center;">
+        <div style="position: relative; width: 520px; height: 520px;">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid oklch(74% 0.14 74 / 0.12);"></div>
+          <div style="position: absolute; inset: 52px; border-radius: 50%; border: 1px solid oklch(74% 0.14 74 / 0.22);"></div>
+          <div style="position: absolute; inset: 104px; border-radius: 50%; border: 1px solid oklch(74% 0.14 74 / 0.38);"></div>
+          <div style="position: absolute; inset: 156px; border-radius: 50%; border: 1px solid oklch(74% 0.14 74 / 0.55);"></div>
+          <div style="position: absolute; inset: 208px; border-radius: 50%; border: 1px solid oklch(74% 0.14 74 / 0.72); background: oklch(74% 0.14 74 / 0.04);"></div>
+          <div style="position: absolute; inset: 260px; border-radius: 50%; border: 2px solid var(--gold); background: oklch(74% 0.14 74 / 0.18);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 02: WHAT IS A HOLON? -->
+  <section data-label="02" data-screen-label="02 — What Is a Holon?" data-speaker-notes="At its core, a holon is something that is simultaneously a complete whole AND a part of something larger. Koestler coined the word from the Greek holos — whole — and the suffix -on, meaning particle or part.">
+    <div style="background: var(--bg); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 52px;">
+      <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); align-self: flex-start;">Definition</span>
+      <div style="display: flex; align-items: stretch; width: 100%; gap: 3px; height: 260px;">
+        <div style="flex: 1; background: oklch(22% 0.07 72); border-radius: 4px 0 0 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; color: var(--fg); letter-spacing: -1px;">Whole</span>
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim);">complete in itself</span>
+        </div>
+        <div style="width: 3px; background: var(--gold); opacity: 0.6; flex: none;"></div>
+        <div style="flex: 1; background: oklch(18% 0.05 195); border-radius: 0 4px 4px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; color: var(--fg); letter-spacing: -1px;">Part</span>
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim);">member of a larger whole</span>
+        </div>
+      </div>
+      <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; text-align: center; opacity: 0.9; max-width: 1100px; text-wrap: pretty; line-height: 1.5;">A holon is any entity that is <span style="color: var(--gold);">simultaneously</span> a whole in its own right and a part of a larger system — neither purely reducible, nor purely independent.</p>
+    </div>
+  </section>
+
+  <!-- SLIDE 03: ARTHUR KOESTLER -->
+  <section data-label="03" data-screen-label="03 — Arthur Koestler" data-speaker-notes="Koestler introduced this concept in The Ghost in the Machine, published in 1967. He was wrestling with a deep puzzle: how can something be both autonomous and dependent at the same time? His answer: it always is both, simultaneously — and we simply hadn't had a word for that until now.">
+    <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--pad-y) 200px; box-sizing: border-box; gap: 40px;">
+      <div style="width: 60px; height: 1px; background: var(--gold); opacity: 0.5;"></div>
+      <blockquote style="font-family: 'Cormorant Garamond', serif; font-size: 56px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0; text-align: center; line-height: 1.4; max-width: 1380px; text-wrap: pretty;">"I have coined the word <span style="color: var(--gold); font-style: normal;">holon</span> for these Janus-faced entities which are simultaneously wholes and parts."</blockquote>
+      <div style="width: 60px; height: 1px; background: var(--gold); opacity: 0.5;"></div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 8px;">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); font-weight: 500; color: var(--fg); letter-spacing: 0.04em;">Arthur Koestler</span>
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim);">The Ghost in the Machine, 1967</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 04: TWO TENDENCIES -->
+  <section data-label="04" data-screen-label="04 — Two Tendencies" data-speaker-notes="Koestler identified two opposing but complementary tendencies in every holon. The self-assertive tendency preserves its own identity and autonomy. The integrative tendency allows it to function as a part of something larger. Both must coexist — remove either and the system either fragments or is absorbed.">
+    <div style="background: var(--bg); width: 100%; height: 100%; display: flex; flex-direction: column; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: var(--gap-lg);">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">The Janus Face</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Every holon has two tendencies</h2>
+      </div>
+      <div style="flex: 1; display: flex; gap: 40px; align-items: stretch;">
+        <div style="flex: 1; background: oklch(22% 0.07 72); border-radius: 6px; padding: 52px; display: flex; flex-direction: column; gap: 24px;">
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex: none;"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); font-weight: 500; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase;">Self-assertive</span>
+          </div>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.25; font-style: italic;">Acts as an autonomous whole</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.65; text-wrap: pretty;">Maintains its own identity, structure, and rules. Resists being dissolved into the larger system. Preserves its boundaries.</p>
+        </div>
+        <div style="flex: 1; background: oklch(18% 0.05 195); border-radius: 6px; padding: 52px; display: flex; flex-direction: column; gap: 24px;">
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex: none;"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); font-weight: 500; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase;">Integrative</span>
+          </div>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.25; font-style: italic;">Acts as a dependent part</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.65; text-wrap: pretty;">Cooperates and coordinates with other holons. Subordinates itself to the needs of the larger system. Enables collective function.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 05: HOLARCHIES -->
+  <section data-label="05" data-screen-label="05 — Holarchies" data-speaker-notes="When holons are nested within holons, the resulting structure is called a holarchy. Unlike a traditional hierarchy that privileges the top, a holarchy treats every level as equally real — just differently scoped. There is no absolute top or bottom.">
+    <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 580px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Structure</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">The Holarchy</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">When holons nest within holons, the structure is called a <span style="color: var(--gold);">holarchy</span>.</p>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty;">Every level is equally real — just differently scoped. Each ring is simultaneously a container and a contained.</p>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="position: relative; width: 680px; height: 680px;">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.18);"></div>
+          <span style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.5); white-space: nowrap;">Society</span>
+          <div style="position: absolute; inset: 90px; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.32);"></div>
+          <span style="position: absolute; top: 110px; left: 50%; transform: translateX(-50%); font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.65); white-space: nowrap;">Organization</span>
+          <div style="position: absolute; inset: 180px; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.50);"></div>
+          <span style="position: absolute; top: 200px; left: 50%; transform: translateX(-50%); font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.8); white-space: nowrap;">Team</span>
+          <div style="position: absolute; inset: 260px; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.7);"></div>
+          <span style="position: absolute; top: 278px; left: 50%; transform: translateX(-50%); font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg); white-space: nowrap;">Individual</span>
+          <div style="position: absolute; inset: 290px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--bg); font-weight: 500; white-space: nowrap;">Cell</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 06: NATURE'S HOLARCHY -->
+  <section data-label="06" data-screen-label="06 — Nature's Holarchy" data-speaker-notes="Nature is the original holarchist. The chain from atoms to ecosystems is a perfect holarchy. Each level is complete and functional at its scale, and each is a component of a larger system. Remove any level and the whole falls apart.">
+    <div style="background: var(--bg-warm); width: 100%; height: 100%; display: flex; flex-direction: column; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: var(--gap-md);">
+      <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Nature</span>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0;">Nature's holarchy</h2>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: space-between;">
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 24px;">
+          <div style="width: 88px; height: 88px; border-radius: 50%; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center;">
+            <div style="width: 18px; height: 18px; border-radius: 50%; background: var(--gold);"></div>
+          </div>
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Atom</span>
+        </div>
+        <div style="flex: 0 0 48px; text-align: center; color: oklch(74% 0.14 74 / 0.4); font-size: 32px; font-family: 'IBM Plex Sans', sans-serif;">→</div>
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 24px;">
+          <div style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--gold); background: oklch(74% 0.14 74 / 0.07); display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <div style="width: 14px; height: 14px; border-radius: 50%; background: var(--gold); opacity: 0.6;"></div>
+            <div style="width: 14px; height: 14px; border-radius: 50%; background: var(--gold);"></div>
+          </div>
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Molecule</span>
+        </div>
+        <div style="flex: 0 0 48px; text-align: center; color: oklch(74% 0.14 74 / 0.4); font-size: 32px; font-family: 'IBM Plex Sans', sans-serif;">→</div>
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 24px;">
+          <div style="width: 110px; height: 110px; border-radius: 40%; border: 2px solid var(--gold); background: oklch(74% 0.14 74 / 0.10); display: flex; align-items: center; justify-content: center;">
+            <div style="width: 30px; height: 30px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.5);"></div>
+          </div>
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Cell</span>
+        </div>
+        <div style="flex: 0 0 48px; text-align: center; color: oklch(74% 0.14 74 / 0.4); font-size: 32px; font-family: 'IBM Plex Sans', sans-serif;">→</div>
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 24px;">
+          <div style="width: 120px; height: 120px; border-radius: 28px; border: 2px solid var(--gold); background: oklch(74% 0.14 74 / 0.13); display: flex; align-items: center; justify-content: center;">
+            <div style="width: 42px; height: 42px; border-radius: 40%; background: oklch(74% 0.14 74 / 0.45);"></div>
+          </div>
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Organ</span>
+        </div>
+        <div style="flex: 0 0 48px; text-align: center; color: oklch(74% 0.14 74 / 0.4); font-size: 32px; font-family: 'IBM Plex Sans', sans-serif;">→</div>
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 24px;">
+          <div style="width: 132px; height: 132px; border-radius: 50%; border: 2px solid var(--gold); background: oklch(74% 0.14 74 / 0.17); display: flex; align-items: center; justify-content: center;">
+            <div style="width: 52px; height: 52px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.4);"></div>
+          </div>
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Organism</span>
+        </div>
+        <div style="flex: 0 0 48px; text-align: center; color: oklch(74% 0.14 74 / 0.4); font-size: 32px; font-family: 'IBM Plex Sans', sans-serif;">→</div>
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 24px;">
+          <div style="width: 144px; height: 144px; border-radius: 8px; border: 2px solid var(--gold); background: oklch(74% 0.14 74 / 0.20); display: flex; align-items: center; justify-content: center;">
+            <div style="width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--gold); background: oklch(74% 0.14 74 / 0.3);"></div>
+          </div>
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Ecosystem</span>
+        </div>
+      </div>
+      <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); margin: 0; text-align: center; font-style: italic;">Each level is complete in itself — and a component of the level above.</p>
+    </div>
+  </section>
+
+  <!-- SLIDE 07: ORGANIZATIONS -->
+  <section data-label="07" data-screen-label="07 — Organizations" data-speaker-notes="Organizations are holarchies too. Each individual is a whole person, also a member of a team, which is part of a department, part of a company. Real-world applications include Holacracy and Team organizations — both distribute authority while maintaining coherence, because they treat every role as a holon.">
+    <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 560px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Organizations</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">The workplace as holarchy</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">Every employee is simultaneously an autonomous individual and a member of team, department, and company.</p>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty;"><span style="color: var(--gold);">Holacracy</span> and <span style="color: var(--gold);">Team organizations</span> are built on exactly this recognition — distributing authority while preserving coherence.</p>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="position: relative; width: 700px; height: 600px;">
+          <div style="position: absolute; inset: 0; border: 1.5px solid oklch(74% 0.14 74 / 0.18); border-radius: 12px; display: flex; align-items: flex-start; padding: 20px 28px;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.45);">Industry</span>
+          </div>
+          <div style="position: absolute; inset: 60px; border: 1.5px solid oklch(74% 0.14 74 / 0.32); border-radius: 10px; display: flex; align-items: flex-start; padding: 20px 28px;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.62);">Company</span>
+          </div>
+          <div style="position: absolute; inset: 120px; border: 1.5px solid oklch(74% 0.14 74 / 0.50); border-radius: 8px; display: flex; align-items: flex-start; padding: 20px 28px;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.78);">Department</span>
+          </div>
+          <div style="position: absolute; inset: 180px; border: 1.5px solid oklch(74% 0.14 74 / 0.68); border-radius: 6px; display: flex; align-items: flex-start; padding: 20px 28px;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg);">Team</span>
+          </div>
+          <div style="position: absolute; inset: 240px; border: 2px solid var(--gold); border-radius: 4px; background: oklch(22% 0.07 72); display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500;">Individual</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 08: EMERGENCE -->
+  <section data-label="08" data-screen-label="08 — Emergence" data-speaker-notes="One of the most powerful insights from holonic thinking is emergence: each level of a holarchy has properties that simply cannot be found in its components. The whole is genuinely greater than the sum of its parts.">
+    <div style="background: var(--bg-cool); width: 100%; height: 100%; display: flex; flex-direction: column; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: var(--gap-lg);">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal);">Systems Thinking</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0;">Each level brings something new</h2>
+      </div>
+      <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.5; opacity: 0.85; max-width: 960px; text-wrap: pretty;">New properties <span style="color: var(--teal);">emerge</span> at each level — properties the parts don't have on their own.</p>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: var(--gap-md); justify-content: center;">
+        <div style="display: flex; align-items: baseline; gap: 40px;">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--teal); font-weight: 500; flex: 0 0 260px;">H₂O molecules</span>
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 52px; color: var(--fg); font-weight: 300; font-style: italic;">have wetness.</span>
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim);">Hydrogen and oxygen atoms don't.</span>
+        </div>
+        <div style="height: 1px; background: oklch(65% 0.10 195 / 0.15);"></div>
+        <div style="display: flex; align-items: baseline; gap: 40px;">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--teal); font-weight: 500; flex: 0 0 260px;">Neural networks</span>
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 52px; color: var(--fg); font-weight: 300; font-style: italic;">generate thought.</span>
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim);">Individual neurons don't think.</span>
+        </div>
+        <div style="height: 1px; background: oklch(65% 0.10 195 / 0.15);"></div>
+        <div style="display: flex; align-items: baseline; gap: 40px;">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--teal); font-weight: 500; flex: 0 0 260px;">Communities</span>
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 52px; color: var(--fg); font-weight: 300; font-style: italic;">produce culture.</span>
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim);">Individuals alone can't create it.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 09: TECHNOLOGY -->
+  <section data-label="09" data-screen-label="09 — Technology" data-speaker-notes="Software engineering has independently arrived at holonic architecture. Functions, modules, services, applications, and platforms form a perfect holarchy. Microservices, component-based design, and APIs are all expressions of the same underlying principle: build things that are both self-contained and composable.">
+    <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 560px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Technology</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Software is holonic by design</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">Good software is made of units that are both <span style="color: var(--gold);">self-contained</span> and <span style="color: var(--gold);">composable</span>.</p>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty;">Microservices, components, and APIs are all expressions of the same holonic principle.</p>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0;">
+        <div style="width: 880px; background: oklch(22% 0.05 72); border: 1px solid oklch(74% 0.14 74 / 0.18); border-radius: 8px; padding: 24px 44px; display: flex; align-items: center; justify-content: space-between;">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); font-weight: 300;">Platform</span>
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim);">AWS, Kubernetes</span>
+        </div>
+        <div style="width: 2px; height: 18px; background: oklch(74% 0.14 74 / 0.3);"></div>
+        <div style="width: 760px; background: oklch(22% 0.05 72); border: 1px solid oklch(74% 0.14 74 / 0.28); border-radius: 8px; padding: 24px 44px; display: flex; align-items: center; justify-content: space-between;">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); font-weight: 300;">Application</span>
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim);">web app, mobile app</span>
+        </div>
+        <div style="width: 2px; height: 18px; background: oklch(74% 0.14 74 / 0.4);"></div>
+        <div style="width: 640px; background: oklch(22% 0.05 72); border: 1px solid oklch(74% 0.14 74 / 0.40); border-radius: 8px; padding: 24px 44px; display: flex; align-items: center; justify-content: space-between;">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); font-weight: 300;">Service</span>
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim);">auth, payments</span>
+        </div>
+        <div style="width: 2px; height: 18px; background: oklch(74% 0.14 74 / 0.55);"></div>
+        <div style="width: 520px; background: oklch(22% 0.05 72); border: 1px solid oklch(74% 0.14 74 / 0.55); border-radius: 8px; padding: 24px 44px; display: flex; align-items: center; justify-content: space-between;">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); font-weight: 300;">Module</span>
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim);">user model, cart</span>
+        </div>
+        <div style="width: 2px; height: 18px; background: oklch(74% 0.14 74 / 0.75);"></div>
+        <div style="width: 400px; background: oklch(22% 0.07 72); border: 2px solid var(--gold); border-radius: 8px; padding: 24px 44px; display: flex; align-items: center; justify-content: center;">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--gold); font-weight: 400;">Function</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 10: KEY TAKEAWAYS -->
+  <section data-label="10" data-screen-label="10 — Key Takeaways" data-speaker-notes="To close: holons give us a lens to understand nested complexity in any domain. The key shift is from either/or thinking — whole OR part — to both/and. Every thing is always both. That shift changes how you see organizations, software, nature, and your own place within larger systems.">
+    <div style="background: var(--bg-warm); width: 100%; height: 100%; display: flex; flex-direction: column; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: var(--gap-lg);">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Key Ideas</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0;">What to take away</h2>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: var(--gap-md); justify-content: center;">
+        <div style="display: flex; align-items: flex-start; gap: 36px;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 72px; color: var(--gold); font-weight: 300; line-height: 1; flex: 0 0 60px;">1</span>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.5; text-wrap: pretty;"><strong style="font-weight: 500;">Wholeness and partness are always relative,</strong> never absolute. Every entity exists at a scale.</p>
+        </div>
+        <div style="height: 1px; background: oklch(74% 0.14 74 / 0.15); margin-left: 96px;"></div>
+        <div style="display: flex; align-items: flex-start; gap: 36px;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 72px; color: var(--gold); font-weight: 300; line-height: 1; flex: 0 0 60px;">2</span>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.5; text-wrap: pretty;"><strong style="font-weight: 500;">New properties emerge at each level</strong> of a holarchy — properties that cannot be found in the parts below.</p>
+        </div>
+        <div style="height: 1px; background: oklch(74% 0.14 74 / 0.15); margin-left: 96px;"></div>
+        <div style="display: flex; align-items: flex-start; gap: 36px;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 72px; color: var(--gold); font-weight: 300; line-height: 1; flex: 0 0 60px;">3</span>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.5; text-wrap: pretty;"><strong style="font-weight: 500;">Healthy systems balance autonomy and integration</strong> — the two tendencies must coexist in every holon.</p>
+        </div>
+        <div style="height: 1px; background: oklch(74% 0.14 74 / 0.15); margin-left: 96px;"></div>
+        <div style="display: flex; align-items: flex-start; gap: 36px;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 72px; color: var(--gold); font-weight: 300; line-height: 1; flex: 0 0 60px;">4</span>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.5; text-wrap: pretty;"><strong style="font-weight: 500;">This pattern appears across every domain</strong> — nature, organizations, and technology all follow holonic structure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE WHY: WHY NOW -->
+  <section data-label="Why" data-screen-label="Why — Why Holons, Why Now" data-speaker-notes="The question isn't only what holons are — it's why the time for a structured community effort is now. Three forces are converging: existing knowledge graph architectures hit limits in complex stateful domains; the AI integration moment demands grounded, scoped context; and the maturation of RDF 1.2, SHACL, and MCP provides the tooling. This is not a moment for a single vendor implementation — it's a moment for shared conventions.">
+    <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; flex-direction: column; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: var(--gap-lg);">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Founding Argument</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0;">Why holons, why now</h2>
+      </div>
+      <div style="flex: 1; display: flex; gap: 36px; align-items: stretch;">
+        <div style="flex: 1; background: oklch(16% 0.05 72); border-radius: 8px; padding: 44px; display: flex; flex-direction: column; gap: 20px;">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.2;">Flat graphs aren't enough</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.65; text-wrap: pretty;">Existing knowledge graph architectures are powerful but flat — they lack native support for scope, temporality, and nested narrative context. Complex stateful domains need something more structured.</p>
+        </div>
+        <div style="flex: 1; background: oklch(16% 0.05 195); border-radius: 8px; padding: 44px; display: flex; flex-direction: column; gap: 20px;">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.2;">The AI integration moment</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.65; text-wrap: pretty;">LLMs need grounded, scoped context to reason reliably. The convergence of RDF 1.2, SHACL, and MCP now provides the tooling to supply it. Demand for structured, bounded context has never been higher.</p>
+        </div>
+        <div style="flex: 1; background: oklch(16% 0.05 72); border-radius: 8px; padding: 44px; display: flex; flex-direction: column; gap: 20px;">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.2;">Community over vendor</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.65; text-wrap: pretty;">This is not a moment for a single implementation. Shared conventions — for messaging, architecture, and interoperability — require a community effort rather than a proprietary standard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 11: LATERAL CONNECTIONS -->
+  <section data-label="11" data-screen-label="11 — Lateral Connections" data-speaker-notes="Beyond nesting, holons can also connect laterally — through what we might call interconnected doorways. A room is a holon; hallways connect it to other rooms. A city is a holon; routes connect it to other cities. A concept is a holon; relationships connect it to other concepts. These lateral connections let us navigate between different domains of concern while still bearing a relationship to the original holon.">
+    <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Connections</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Beyond containment</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">Holons can also connect <span style="color: var(--gold);">laterally</span> — through interconnected doorways at the same level.</p>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty;">Such connections help focus on differing domains of concern, while still bearing a relationship to the original holon.</p>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 60px;">
+        <!-- Row 1: Rooms & hallways -->
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.3); display: flex; align-items: center; justify-content: center; flex: none;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.5);">Room</span>
+          </div>
+          <div style="width: 200px; height: 1.5px; background: oklch(74% 0.14 74 / 0.28); position: relative; flex: none;">
+            <span style="position: absolute; top: -28px; left: 0; width: 100%; text-align: center; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.45); font-style: italic; white-space: nowrap;">hallway</span>
+          </div>
+          <div style="width: 96px; height: 96px; border-radius: 50%; border: 2px solid var(--gold); background: oklch(22% 0.07 72); display: flex; align-items: center; justify-content: center; flex: none;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500;">Room</span>
+          </div>
+          <div style="width: 200px; height: 1.5px; background: oklch(74% 0.14 74 / 0.28); position: relative; flex: none;">
+            <span style="position: absolute; top: -28px; left: 0; width: 100%; text-align: center; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.45); font-style: italic; white-space: nowrap;">hallway</span>
+          </div>
+          <div style="width: 80px; height: 80px; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.3); display: flex; align-items: center; justify-content: center; flex: none;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.5);">Room</span>
+          </div>
+        </div>
+        <!-- Row 2: Related concepts -->
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.3); display: flex; align-items: center; justify-content: center; flex: none;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.5);">Idea</span>
+          </div>
+          <div style="width: 200px; height: 1.5px; background: oklch(74% 0.14 74 / 0.28); position: relative; flex: none;">
+            <span style="position: absolute; top: -28px; left: 0; width: 100%; text-align: center; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.45); font-style: italic; white-space: nowrap;">relation</span>
+          </div>
+          <div style="width: 96px; height: 96px; border-radius: 50%; border: 2px solid var(--gold); background: oklch(22% 0.07 72); display: flex; align-items: center; justify-content: center; flex: none;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500;">Idea</span>
+          </div>
+          <div style="width: 200px; height: 1.5px; background: oklch(74% 0.14 74 / 0.28); position: relative; flex: none;">
+            <span style="position: absolute; top: -28px; left: 0; width: 100%; text-align: center; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.45); font-style: italic; white-space: nowrap;">relation</span>
+          </div>
+          <div style="width: 80px; height: 80px; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.3); display: flex; align-items: center; justify-content: center; flex: none;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.5);">Idea</span>
+          </div>
+        </div>
+        <!-- Row 3: Cities & routes -->
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.3); display: flex; align-items: center; justify-content: center; flex: none;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.5);">City</span>
+          </div>
+          <div style="width: 200px; height: 1.5px; background: oklch(74% 0.14 74 / 0.28); position: relative; flex: none;">
+            <span style="position: absolute; top: -28px; left: 0; width: 100%; text-align: center; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.45); font-style: italic; white-space: nowrap;">route</span>
+          </div>
+          <div style="width: 96px; height: 96px; border-radius: 50%; border: 2px solid var(--gold); background: oklch(22% 0.07 72); display: flex; align-items: center; justify-content: center; flex: none;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500;">City</span>
+          </div>
+          <div style="width: 200px; height: 1.5px; background: oklch(74% 0.14 74 / 0.28); position: relative; flex: none;">
+            <span style="position: absolute; top: -28px; left: 0; width: 100%; text-align: center; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.45); font-style: italic; white-space: nowrap;">route</span>
+          </div>
+          <div style="width: 80px; height: 80px; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.3); display: flex; align-items: center; justify-content: center; flex: none;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.5);">City</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 12: HOLONS AS NAMED GRAPHS -->
+  <section data-label="12" data-screen-label="12 — Holons as Named Graphs" data-speaker-notes="Beyond nesting and lateral connections, holons also form graphs. These graphs are self-contained — they have a clear boundary defining membership, which is why we call them named graphs. Crucially they are temporal: they don't just capture a snapshot of structure; they record a history of events — changes to the state of items within the graph over time.">
+    <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Graph Theory</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Holons as named graphs</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">Holons naturally form graphs — but these graphs are <span style="color: var(--gold);">self-contained</span> and <span style="color: var(--gold);">temporal</span>.</p>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex: none; margin-top: 11px;"></div>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;"><strong style="color: var(--fg); font-weight: 500;">Self-contained (named):</strong> a clear boundary defines what belongs to the holon.</p>
+          </div>
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex: none; margin-top: 11px;"></div>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;"><strong style="color: var(--fg); font-weight: 500;">Temporal:</strong> events record changes to the state of items over time.</p>
+          </div>
+        </div>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.65; font-style: italic; text-wrap: pretty;">&#8220;Named&#8221; here is a conceptual term — the holon graph model is format-agnostic and does not require the RDF stack.</p>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="position: relative; width: 560px; height: 460px; border: 1.5px solid oklch(74% 0.14 74 / 0.28); border-radius: 12px; background: oklch(11% 0.04 72);">
+          <span style="position: absolute; top: 14px; left: 50%; transform: translateX(-50%); font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.4); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap;">Named Graph</span>
+          <!-- Edges -->
+          <div style="position: absolute; top: 135px; left: 162px; width: 236px; height: 1.5px; background: oklch(74% 0.14 74 / 0.2);"></div>
+          <div style="position: absolute; top: 335px; left: 162px; width: 236px; height: 1.5px; background: oklch(74% 0.14 74 / 0.2);"></div>
+          <div style="position: absolute; top: 164px; left: 133px; width: 1.5px; height: 144px; background: oklch(74% 0.14 74 / 0.2);"></div>
+          <div style="position: absolute; top: 164px; left: 425px; width: 1.5px; height: 144px; background: oklch(74% 0.14 74 / 0.2);"></div>
+          <!-- Node n₁ top-left -->
+          <div style="position: absolute; top: 108px; left: 106px; width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.4); background: oklch(16% 0.05 72); display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.65);">n₁</span>
+          </div>
+          <!-- Node n₂ top-right -->
+          <div style="position: absolute; top: 108px; left: 398px; width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.4); background: oklch(16% 0.05 72); display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.65);">n₂</span>
+          </div>
+          <!-- Node n₃ bottom-left -->
+          <div style="position: absolute; top: 308px; left: 106px; width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.4); background: oklch(16% 0.05 72); display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.65);">n₃</span>
+          </div>
+          <!-- Node n₄ bottom-right -->
+          <div style="position: absolute; top: 308px; left: 398px; width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.4); background: oklch(16% 0.05 72); display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.65);">n₄</span>
+          </div>
+          <!-- Event timeline at bottom of container -->
+          <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 10px;">
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.5);"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.35);">e₁</span>
+            <div style="width: 36px; height: 1px; background: oklch(74% 0.14 74 / 0.25);"></div>
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.5);"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.35);">e₂</span>
+            <div style="width: 36px; height: 1px; background: oklch(74% 0.14 74 / 0.25);"></div>
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.5);"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.35);">e₃</span>
+            <div style="width: 36px; height: 1px; background: oklch(74% 0.14 74 / 0.25);"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.35);">→ time</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 13: AGENTS & TRAJECTORIES -->
+  <section data-label="13" data-screen-label="13 — Agents &amp; Trajectories" data-speaker-notes="Within a holon's graph, the items that change are called agents. An agent is an observable — something you can watch and measure within the holon. Each time an agent changes state, that is an event. The complete sequence of events for a given agent is its trajectory within the holon — the path it traces through state space over time.">
+    <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Dynamics</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Agents &amp; trajectories</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">Items that change within a graph are called <span style="color: var(--gold);">agents</span> — the observables within the holon.</p>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex: none; margin-top: 11px;"></div>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;"><strong style="color: var(--fg); font-weight: 500;">Agent:</strong> a node within the graph whose state changes over time.</p>
+          </div>
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex: none; margin-top: 11px;"></div>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;"><strong style="color: var(--fg); font-weight: 500;">Trajectory:</strong> the ordered set of events for a given agent — its path through the holon.</p>
+          </div>
+        </div>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="width: 700px; display: flex; flex-direction: column; gap: 48px;">
+          <!-- Mini-graph: 3 nodes, middle = agent -->
+          <div style="position: relative; height: 120px;">
+            <div style="position: absolute; top: 49px; left: 118px; width: 192px; height: 1.5px; background: oklch(74% 0.14 74 / 0.25);"></div>
+            <div style="position: absolute; top: 49px; left: 390px; width: 192px; height: 1.5px; background: oklch(74% 0.14 74 / 0.25);"></div>
+            <!-- n₁ left -->
+            <div style="position: absolute; top: 22px; left: 62px; width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.32); display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.5);">n₁</span>
+            </div>
+            <!-- agent center (highlighted) -->
+            <div style="position: absolute; top: 10px; left: 310px; width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--gold); background: oklch(22% 0.07 72); display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500;">agent</span>
+            </div>
+            <!-- n₂ right -->
+            <div style="position: absolute; top: 22px; left: 582px; width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid oklch(74% 0.14 74 / 0.32); display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.5);">n₂</span>
+            </div>
+            <span style="position: absolute; top: 96px; left: 0; width: 100%; text-align: center; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic;">an observable within the graph</span>
+          </div>
+          <!-- Divider -->
+          <div style="height: 1px; background: oklch(74% 0.14 74 / 0.1);"></div>
+          <!-- Trajectory timeline -->
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); letter-spacing: 0.12em; text-transform: uppercase;">Trajectory</span>
+            <div style="position: relative; height: 72px;">
+              <div style="position: absolute; top: 20px; left: 0; width: 640px; height: 1.5px; background: oklch(74% 0.14 74 / 0.28);"></div>
+              <span style="position: absolute; top: 7px; left: 648px; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.4);">→</span>
+              <!-- e₁ -->
+              <div style="position: absolute; top: 12px; left: 36px; width: 16px; height: 16px; border-radius: 50%; background: var(--gold);"></div>
+              <span style="position: absolute; top: 40px; left: 28px; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.55);">e₁</span>
+              <!-- e₂ -->
+              <div style="position: absolute; top: 12px; left: 196px; width: 16px; height: 16px; border-radius: 50%; background: var(--gold);"></div>
+              <span style="position: absolute; top: 40px; left: 188px; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.55);">e₂</span>
+              <!-- e₃ -->
+              <div style="position: absolute; top: 12px; left: 356px; width: 16px; height: 16px; border-radius: 50%; background: var(--gold);"></div>
+              <span style="position: absolute; top: 40px; left: 348px; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.55);">e₃</span>
+              <!-- e₄ -->
+              <div style="position: absolute; top: 12px; left: 516px; width: 16px; height: 16px; border-radius: 50%; background: var(--gold);"></div>
+              <span style="position: absolute; top: 40px; left: 508px; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.55);">e₄</span>
+            </div>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; font-style: italic;">The set of events for a given agent forms its trajectory within the holon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 14: SCOPE -->
+  <section data-label="14" data-screen-label="14 — Scope" data-speaker-notes="Holons introduce a concept analogous to scope in programming languages. A containing holon may declare entities — agents are entities — that its contained holons can reference. A holon can also include another holon to gain access to its declared entities, with restrictions on what can be referenced.">
+    <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Scope</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Entities &amp; scope</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">A containing holon may <span style="color: var(--gold);">declare</span> entities that its contained holons can <span style="color: var(--gold);">reference</span> — the graph equivalent of scope.</p>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex: none; margin-top: 11px;"></div>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;"><strong style="color: var(--fg); font-weight: 500;">Agents are entities</strong> — items that change state and can be declared and shared across holons.</p>
+          </div>
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex: none; margin-top: 11px;"></div>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;"><strong style="color: var(--fg); font-weight: 500;">Including a holon</strong> grants access to its declared entities, with restrictions on what can be referenced.</p>
+          </div>
+        </div>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="position: relative; width: 700px; height: 520px; border: 1.5px solid oklch(74% 0.14 74 / 0.25); border-radius: 12px; background: oklch(11% 0.04 72);">
+          <span style="position: absolute; top: 14px; left: 26px; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.38); letter-spacing: 0.1em; text-transform: uppercase;">Containing Holon</span>
+          <!-- Entity A declaration -->
+          <div style="position: absolute; top: 56px; left: 32px; display: flex; align-items: center; gap: 12px;">
+            <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--gold); flex: none;"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500;">Entity A</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic;">declared here</span>
+          </div>
+          <!-- Dashed vertical connector -->
+          <div style="position: absolute; top: 68px; left: 37px; width: 0; height: 78px; border-left: 1.5px dashed oklch(74% 0.14 74 / 0.35);"></div>
+          <!-- Contained holon box -->
+          <div style="position: absolute; top: 146px; left: 32px; right: 32px; bottom: 32px; border: 1.5px solid oklch(74% 0.14 74 / 0.4); border-radius: 8px; background: oklch(14% 0.05 72); padding: 20px 28px; display: flex; flex-direction: column; gap: 24px;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.55); letter-spacing: 0.1em; text-transform: uppercase;">Contained Holon</span>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.5);">→</span>
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500;">Entity A</span>
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic;">referenced</span>
+            </div>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.65; max-width: 480px; text-wrap: pretty;">A contained holon sees only what its containing holon has declared — and only what it has been granted permission to reference.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 15: SEMANTIC GRAPHS -->
+  <section data-label="15" data-screen-label="15 — Semantic Graphs" data-speaker-notes="Here's a concrete example. An employee entity is declared within the company holon. Both the HR holon and the R&D holon can reference that same employee — but for completely different purposes. HR sees the employee in terms of benefits and roles; R&D sees them in terms of projects and skills. This shared referencing across contexts is why holons and semantic graphs are such a natural fit.">
+    <div style="background: var(--bg-warm); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Semantic Graphs</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">One entity, many contexts</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">An employee declared in a company holon can be referenced by both an HR holon and an R&amp;D holon — for entirely different purposes.</p>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty;">This is why holons and <span style="color: var(--gold);">semantic graphs</span> work so well together — both treat entities as meaningful across multiple contexts simultaneously.</p>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="position: relative; width: 760px; height: 480px; border: 1.5px solid oklch(74% 0.14 74 / 0.25); border-radius: 12px; background: oklch(14% 0.05 72);">
+          <span style="position: absolute; top: 14px; left: 26px; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.38); letter-spacing: 0.1em; text-transform: uppercase;">Company Holon</span>
+          <!-- Employee entity (declared, centered) -->
+          <div style="position: absolute; top: 52px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 12px; white-space: nowrap;">
+            <div style="width: 14px; height: 14px; border-radius: 50%; background: var(--gold); flex: none;"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500;">Employee</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic;">declared</span>
+          </div>
+          <!-- Vertical dashed line down to junction -->
+          <div style="position: absolute; top: 86px; left: 379px; width: 0; height: 152px; border-left: 1.5px dashed oklch(74% 0.14 74 / 0.35);"></div>
+          <!-- Horizontal junction -->
+          <div style="position: absolute; top: 238px; left: 195px; width: 370px; height: 1.5px; background: oklch(74% 0.14 74 / 0.3);"></div>
+          <!-- HR Holon -->
+          <div style="position: absolute; top: 244px; left: 40px; width: 310px; height: 196px; border: 1.5px solid oklch(74% 0.14 74 / 0.4); border-radius: 8px; background: oklch(16% 0.06 72); padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.58); letter-spacing: 0.1em; text-transform: uppercase;">HR Holon</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold);">→ Employee</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic;">benefits &amp; roles</span>
+          </div>
+          <!-- R&D Holon -->
+          <div style="position: absolute; top: 244px; left: 410px; width: 310px; height: 196px; border: 1.5px solid oklch(74% 0.14 74 / 0.4); border-radius: 8px; background: oklch(16% 0.06 72); padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.58); letter-spacing: 0.1em; text-transform: uppercase;">R&amp;D Holon</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold);">→ Employee</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic;">projects &amp; skills</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 16: FOUR ASPECTS -->
+  <section data-label="16" data-screen-label="16 — Four Aspects" data-speaker-notes="Every holon can be understood through four design partitions. The scene graph holds the internal state. The context or event graph records mutations to agents over time. The boundary defines the rules governing the system's evolution. And projection layers represent the different views available to external observers. These are conceptual partitions rather than formal graph structures.">
+    <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 500px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Four Aspects</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">A holon's four aspects</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">Every holon consists of four distinct design partitions, each serving a different structural purpose.</p>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty; font-style: italic;">These aren't necessarily graphs in the formal sense — they are conceptual partitions that define how a holon is structured and observed.</p>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; height: 560px;">
+          <!-- Card 1: Scene Graph -->
+          <div style="background: oklch(18% 0.06 72); border-radius: 8px; padding: 32px 36px; position: relative; display: flex; flex-direction: column; gap: 16px; overflow: hidden;">
+            <span style="position: absolute; top: 10px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; color: oklch(74% 0.14 74 / 0.14); line-height: 1;">1</span>
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.15;">Scene Graph</p>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.55; text-wrap: pretty;">Represents the internal state — components, relationships, and current configuration of the holon.</p>
+          </div>
+          <!-- Card 2: Event Graph -->
+          <div style="background: oklch(16% 0.05 195); border-radius: 8px; padding: 32px 36px; position: relative; display: flex; flex-direction: column; gap: 16px; overflow: hidden;">
+            <span style="position: absolute; top: 10px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; color: oklch(65% 0.10 195 / 0.18); line-height: 1;">2</span>
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.15;">Event Graph</p>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.55; text-wrap: pretty;">Records mutations to the agents — the history of how the system has changed over time.</p>
+          </div>
+          <!-- Card 3: Boundary -->
+          <div style="background: oklch(18% 0.06 72); border-radius: 8px; padding: 32px 36px; position: relative; display: flex; flex-direction: column; gap: 16px; overflow: hidden;">
+            <span style="position: absolute; top: 10px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; color: oklch(74% 0.14 74 / 0.14); line-height: 1;">3</span>
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.15;">Boundary</p>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.55; text-wrap: pretty;">Rules and restrictions governing the system's evolution — what may change and how.</p>
+          </div>
+          <!-- Card 4: Projection Layers -->
+          <div style="background: oklch(16% 0.05 195); border-radius: 8px; padding: 32px 36px; position: relative; display: flex; flex-direction: column; gap: 16px; overflow: hidden;">
+            <span style="position: absolute; top: 10px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; color: oklch(65% 0.10 195 / 0.18); line-height: 1;">4</span>
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.15;">Projection Layers</p>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.55; text-wrap: pretty;">Multiple views of the holon, each representing a different observer's perspective on the same system.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 17: THE SCENE GRAPH -->
+  <section data-label="17" data-screen-label="17 — The Scene Graph" data-speaker-notes="The Scene Graph is the knowledge graph for the holon — the stage on which everything is set. It contains the agents (characters), props, scenery, portals, and so on that participate in the holon. It may also record originating states for entities — the baseline from which changes are measured.">
+    <div style="background: var(--bg-warm); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Aspect 1</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">The Scene Graph</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">The Scene is the <span style="color: var(--gold);">knowledge graph</span> for the holon — the stage on which the narrative is enacted.</p>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty;">It contains all participating entities and may also record their originating states — the baseline from which changes are measured.</p>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="width: 600px; border: 1.5px solid oklch(74% 0.14 74 / 0.28); border-radius: 10px; background: oklch(14% 0.05 72); overflow: hidden;">
+          <div style="padding: 16px 28px; border-bottom: 1px solid oklch(74% 0.14 74 / 0.12);">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.45); letter-spacing: 0.1em; text-transform: uppercase;">Scene Graph</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; padding: 18px 28px; border-bottom: 1px solid oklch(74% 0.14 74 / 0.08);">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--gold); flex: none;"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg); flex: 1;">Agent A</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic;">character</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; padding: 18px 28px; border-bottom: 1px solid oklch(74% 0.14 74 / 0.08);">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--gold); opacity: 0.65; flex: none;"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg); flex: 1;">Agent B</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic;">character</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; padding: 18px 28px; border-bottom: 1px solid oklch(74% 0.14 74 / 0.08);">
+            <div style="width: 22px; height: 22px; border: 1.5px solid var(--gold); border-radius: 3px; flex: none;"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg); flex: 1;">Key</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic;">prop</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; padding: 18px 28px; border-bottom: 1px solid oklch(74% 0.14 74 / 0.08);">
+            <div style="width: 24px; height: 24px; border-radius: 50%; border: 1.5px dashed var(--gold); flex: none;"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg); flex: 1;">Door</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic;">portal</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; padding: 18px 28px;">
+            <div style="width: 44px; height: 16px; border: 1.5px solid oklch(74% 0.14 74 / 0.45); border-radius: 2px; flex: none;"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg); flex: 1;">Castle</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic;">scenery</span>
+          </div>
+          <div style="padding: 16px 28px; border-top: 1px solid oklch(74% 0.14 74 / 0.12);">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic;">The stage on which the narrative is enacted</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 18: THE EVENT GRAPH -->
+  <section data-label="18" data-screen-label="18 — The Event Graph" data-speaker-notes="The Event Graph records changes — what agents say or do, mutations of agent state, invalidation events, clock events, and more. In a stage play this is the action log of the scene over time. It is also known as the context graph. Together with the Scene Graph, it gives a full picture of the holon's history.">
+    <div style="background: var(--bg-cool); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal);">Aspect 2</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">The Event Graph</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">Event graphs represent <span style="color: var(--teal);">changes</span> — what agents say or do, mutations of state, invalidations, and clock events.</p>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty;">In a stage play, this is the action log of the scene over time. Also known as the <span style="color: var(--teal);">context graph</span>.</p>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="position: relative; width: 580px; padding: 16px 0 0 0;">
+          <div style="position: absolute; left: 16px; top: 24px; bottom: 0; width: 1.5px; background: oklch(65% 0.10 195 / 0.2);"></div>
+          <div style="display: flex; align-items: flex-start; gap: 28px; padding: 0 0 44px 0;">
+            <div style="flex: none; width: 32px; display: flex; justify-content: center; padding-top: 4px;">
+              <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--gold);"></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">act</span>
+              <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.5;">An agent speaks, moves, or performs an action within the scene.</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 28px; padding: 0 0 44px 0;">
+            <div style="flex: none; width: 32px; display: flex; justify-content: center; padding-top: 4px;">
+              <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--gold);"></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">mutate</span>
+              <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.5;">An agent's state is updated — properties, attributes, or relationships change.</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 28px; padding: 0 0 44px 0;">
+            <div style="flex: none; width: 32px; display: flex; justify-content: center; padding-top: 4px;">
+              <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--teal);"></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--teal); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">invalidate</span>
+              <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.5;">A resource or state is retired — no longer available for use.</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 28px;">
+            <div style="flex: none; width: 32px; display: flex; justify-content: center; padding-top: 4px;">
+              <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--teal);"></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--teal); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">clock</span>
+              <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.5;">System time advances — triggering scheduled or time-dependent events.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 19: THE BOUNDARY -->
+  <section data-label="19" data-screen-label="19 — The Boundary" data-speaker-notes="The Boundary represents constraints and performs mutations. A character can walk through a door but not a wall. A key is required to unlock that door. A resource, once used, may not be usable again. In RDF 1.2, these constraints are implemented via SHACL shapes and rules — a formal language for expressing what is and isn't permitted within a graph.">
+    <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Aspect 3</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">The Boundary</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">The Boundary represents <span style="color: var(--gold);">constraints</span> and performs mutations — governing what may change and how.</p>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty;">In RDF 1.2, this is implemented via <span style="color: var(--gold);">SHACL shapes and rules</span> — a formal language for expressing permitted and constrained changes.</p>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="width: 620px; border: 1.5px solid oklch(74% 0.14 74 / 0.25); border-radius: 10px; background: oklch(11% 0.04 72); overflow: hidden;">
+          <div style="padding: 16px 28px; border-bottom: 1px solid oklch(74% 0.14 74 / 0.12);">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.45); letter-spacing: 0.1em; text-transform: uppercase;">Boundary</span>
+          </div>
+          <div style="padding: 20px 28px; display: flex; flex-direction: column; gap: 16px; border-bottom: 1px solid oklch(74% 0.14 74 / 0.1);">
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+              <div style="width: 10px; height: 10px; border-radius: 50%; background: oklch(67% 0.11 155); flex: none; margin-top: 9px;"></div>
+              <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); margin: 0; line-height: 1.5;">Character can walk through a door</p>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+              <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--gold); flex: none; margin-top: 9px;"></div>
+              <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); margin: 0; line-height: 1.5;">Key is required to unlock the door <span style="color: var(--fg-dim); font-style: italic;">(conditional)</span></p>
+            </div>
+          </div>
+          <div style="padding: 20px 28px; display: flex; flex-direction: column; gap: 16px; border-bottom: 1px solid oklch(74% 0.14 74 / 0.1);">
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+              <div style="width: 10px; height: 10px; border-radius: 50%; background: oklch(65% 0.13 18); flex: none; margin-top: 9px;"></div>
+              <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); margin: 0; line-height: 1.5;">Character cannot walk through a wall</p>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+              <div style="width: 10px; height: 10px; border-radius: 50%; background: oklch(65% 0.13 18); flex: none; margin-top: 9px;"></div>
+              <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); margin: 0; line-height: 1.5;">A resource, once used, may not be usable again</p>
+            </div>
+          </div>
+          <div style="padding: 16px 28px;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic;">RDF 1.2 — SHACL shapes and rules</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 20: THE PROJECTION LAYER -->
+  <section data-label="20" data-screen-label="20 — The Projection Layer" data-speaker-notes="The Projection Layer is how the holon is seen from outside. It may be a view from the audience, a map of characters from above, the perspective of the scene from a given agent, and so on. Projections are frequently mediated by cameras within the scene — a camera being any means of performing observations. There will usually be multiple projections for any given holon.">
+    <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Aspect 4</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">The Projection Layer</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">How the holon is seen from <span style="color: var(--gold);">outside</span> — mediated by cameras within the scene.</p>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty;">A <span style="color: var(--gold);">camera</span> is a designated observation point within the scene — a defined perspective or query that selects and filters what is visible from a given vantage. There will usually be <span style="color: var(--gold);">multiple projections</span> for any holon, each mediated by a different camera — each giving a different view of the same system.</p>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px;">
+        <div style="display: flex; gap: 24px; align-items: flex-start; width: 100%;">
+          <!-- Frame 1: Audience -->
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 14px;">
+            <div style="height: 240px; border: 1.5px solid oklch(74% 0.14 74 / 0.3); border-radius: 6px; background: oklch(11% 0.04 72); position: relative; overflow: hidden;">
+              <div style="position: absolute; bottom: 32%; left: 12%; right: 12%; height: 1.5px; background: oklch(74% 0.14 74 / 0.4);"></div>
+              <div style="position: absolute; bottom: 32%; left: 34%; width: 14px; height: 14px; border-radius: 50%; background: var(--gold); transform: translateY(-50%);"></div>
+              <div style="position: absolute; bottom: 32%; left: 54%; width: 12px; height: 12px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.55); transform: translateY(-50%);"></div>
+              <div style="position: absolute; top: 0; bottom: 0; left: 0; width: 12%; background: oklch(74% 0.14 74 / 0.05);"></div>
+              <div style="position: absolute; top: 0; bottom: 0; right: 0; width: 12%; background: oklch(74% 0.14 74 / 0.05);"></div>
+            </div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg); font-weight: 500;">Audience</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim);">Front-facing scene view</span>
+          </div>
+          <!-- Frame 2: Aerial Map -->
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 14px;">
+            <div style="height: 240px; border: 1.5px solid oklch(74% 0.14 74 / 0.3); border-radius: 6px; background: oklch(11% 0.04 72); display: flex; align-items: center; justify-content: center;">
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding: 16px;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25);"></div>
+                <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--gold);"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25);"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25);"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25);"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25);"></div>
+                <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--gold); opacity: 0.7;"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25);"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25);"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25);"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25);"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25);"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25);"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25);"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25);"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25);"></div>
+              </div>
+            </div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg); font-weight: 500;">Aerial Map</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim);">Spatial overview from above</span>
+          </div>
+          <!-- Frame 3: Agent POV -->
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 14px;">
+            <div style="height: 240px; border: 1.5px solid oklch(74% 0.14 74 / 0.3); border-radius: 6px; background: oklch(11% 0.04 72); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="position: absolute; inset: 20px; border: 1px solid oklch(74% 0.14 74 / 0.18); border-radius: 2px;"></div>
+              <div style="position: absolute; inset: 48px; border: 1px solid oklch(74% 0.14 74 / 0.28); border-radius: 2px;"></div>
+              <div style="position: absolute; inset: 76px; border: 1px solid oklch(74% 0.14 74 / 0.42); border-radius: 2px;"></div>
+              <div style="position: absolute; inset: 104px; border: 1.5px solid var(--gold); border-radius: 2px; background: oklch(74% 0.14 74 / 0.05);"></div>
+            </div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg); font-weight: 500;">Agent POV</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim);">Scene from a specific agent</span>
+          </div>
+        </div>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); margin: 0; text-align: center; font-style: italic;">A camera is any means of performing observations within the holon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 21: OPEN & CLOSED HOLONS -->
+  <section data-label="21" data-screen-label="21 — Open &amp; Closed Holons" data-speaker-notes="Holons can be open or closed. An open holon accepts events, validates inputs, and presents dynamic views — analogous to a live, in-memory object. A closed holon no longer accepts events and represents either a complete narrative arc or an interrupted state caused by violations that couldn't be recovered from. This is analogous to an object that has been persisted to storage.">
+    <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 520px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">State</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Open and closed holons</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">A holon is either <span style="color: oklch(67% 0.11 155);">open</span> — accepting events, validating inputs, presenting dynamic views — or <span style="color: oklch(74% 0.14 74);">closed</span>, representing a complete or interrupted narrative.</p>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; font-style: italic;">Analogous to an in-memory object versus one that has been persisted.</p>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="display: flex; width: 960px; height: 460px; gap: 3px;">
+          <!-- Open panel -->
+          <div style="flex: 1; background: oklch(17% 0.06 155); border-radius: 8px 0 0 8px; padding: 32px 36px; display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <div style="width: 12px; height: 12px; border-radius: 50%; background: oklch(67% 0.11 155); flex: none;"></div>
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(67% 0.11 155); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500;">Open</span>
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 16px; justify-content: center;">
+              <div style="display: flex; gap: 14px; align-items: center;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: oklch(67% 0.11 155); flex: none;"></div>
+                <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Accepts events</span>
+              </div>
+              <div style="display: flex; gap: 14px; align-items: center;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: oklch(67% 0.11 155); flex: none;"></div>
+                <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Validates inputs</span>
+              </div>
+              <div style="display: flex; gap: 14px; align-items: center;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: oklch(67% 0.11 155); flex: none;"></div>
+                <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Presents dynamic views</span>
+              </div>
+            </div>
+            <div style="border-top: 1px solid oklch(67% 0.11 155 / 0.2); padding-top: 18px;">
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(67% 0.11 155 / 0.7); font-style: italic;">→ in-memory object</span>
+            </div>
+          </div>
+          <!-- Divider -->
+          <div style="width: 3px; background: oklch(74% 0.14 74 / 0.25); flex: none;"></div>
+          <!-- Closed panel -->
+          <div style="flex: 1; background: oklch(15% 0.05 72); border-radius: 0 8px 8px 0; padding: 32px 36px; display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <div style="width: 12px; height: 12px; border-radius: 50%; background: oklch(55% 0.06 72); flex: none;"></div>
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(55% 0.06 72); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500;">Closed</span>
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 16px; justify-content: center;">
+              <div style="display: flex; gap: 14px; align-items: center;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: oklch(55% 0.06 72); flex: none;"></div>
+                <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">No longer accepts events</span>
+              </div>
+              <div style="display: flex; gap: 14px; align-items: center;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: oklch(55% 0.06 72); flex: none;"></div>
+                <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Complete narrative arc</span>
+              </div>
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: oklch(55% 0.06 72); flex: none; margin-top: 10px;"></div>
+                <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); text-wrap: pretty;">Interrupted if violations could not be recovered from</span>
+              </div>
+            </div>
+            <div style="border-top: 1px solid oklch(55% 0.06 72 / 0.2); padding-top: 18px;">
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(55% 0.06 72 / 0.7); font-style: italic;">→ persisted object</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 22: HOW OPEN HOLONS EVOLVE -->
+  <section data-label="22" data-screen-label="22 — How Open Holons Evolve" data-speaker-notes="Open holons use several mechanisms to determine their evolution. Bayesian priors base actions on previous behaviors. Active Inference measures the surprise between the expected and active state, driving the system toward lower uncertainty. State machines define rules-based state transitions. External actors are humans or other systems that directly control agents. Once closed, a holon becomes a record — the script of a play, the transcript of a meeting.">
+    <div style="background: var(--bg-warm); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 520px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Evolution</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">How open holons evolve</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">Open holons use several mechanisms to determine how they change over time.</p>
+        <div style="height: 1px; background: oklch(74% 0.14 74 / 0.15);"></div>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; font-style: italic; text-wrap: pretty;">Once closed, a holon becomes a record of that narrative — the script of a play, the transcript of a meeting.</p>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: stretch; justify-content: center; gap: 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; height: 500px;">
+          <!-- Bayesian Priors -->
+          <div style="background: oklch(18% 0.06 72); border-radius: 8px; padding: 32px 36px; display: flex; flex-direction: column; gap: 16px; border-left: 3px solid var(--gold);">
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.15;">Bayesian Priors</p>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.55; text-wrap: pretty;">Actions informed by previous behaviors — the holon uses history to anticipate what to do next.</p>
+          </div>
+          <!-- Active Inference -->
+          <div style="background: oklch(16% 0.05 195); border-radius: 8px; padding: 32px 36px; display: flex; flex-direction: column; gap: 16px; border-left: 3px solid var(--teal);">
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.15;">Active Inference</p>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.55; text-wrap: pretty;">Measures surprise — the degree by which the expected state differs from the active state — driving toward lower uncertainty.</p>
+          </div>
+          <!-- State Machines -->
+          <div style="background: oklch(16% 0.05 195); border-radius: 8px; padding: 32px 36px; display: flex; flex-direction: column; gap: 16px; border-left: 3px solid var(--teal);">
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.15;">State Machines</p>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.55; text-wrap: pretty;">Rules-based transitions define what states are reachable and under what conditions they may be entered.</p>
+          </div>
+          <!-- External Actors -->
+          <div style="background: oklch(18% 0.06 72); border-radius: 8px; padding: 32px 36px; display: flex; flex-direction: column; gap: 16px; border-left: 3px solid var(--gold);">
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.15;">External Actors</p>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.55; text-wrap: pretty;">Agents controlled from outside the holon — humans or other systems that directly direct its evolution.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 23: DATABOOKS -->
+  <section data-label="23" data-screen-label="23 — Databooks" data-speaker-notes="Serialising holons is complex, so several implementations are moving toward a databook approach. A databook uses markdown as its substrate — a metadata header, zero or more code blocks, and regular markdown prose. Databooks can carry all the components of an in-flight holon, or act as data holons holding taxonomy, schema, queries, and application metadata. They are the messaging substrate of a holon architecture — equivalent to an HTML document, a play script, or a musical score. A triple store or object database can be abstracted as a deep databook or a store of multiple databooks.">
+    <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 520px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Serialization</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Databooks</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">Markdown as a substrate — with a publishing-oriented <span style="color: var(--gold);">metadata header</span> and zero or more <span style="color: var(--gold);">code blocks</span>.</p>
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <div style="display: flex; gap: 18px; align-items: flex-start;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex: none; margin-top: 11px;"></div>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;">Carries all components of an in-flight holon, or stores data holons — taxonomy, schema, queries, and application metadata.</p>
+          </div>
+          <div style="display: flex; gap: 18px; align-items: flex-start;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex: none; margin-top: 11px;"></div>
+            <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;">The messaging substrate of a holon architecture — equivalent to an HTML document, a play script, or a musical score.</p>
+          </div>
+        </div>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; font-style: italic; text-wrap: pretty;">A triple store or object database can be abstracted as a deep databook, or as a store of multiple databooks.</p>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="width: 660px; border: 1.5px solid oklch(74% 0.14 74 / 0.25); border-radius: 10px; background: oklch(10% 0.03 72); overflow: hidden;">
+          <!-- Title bar -->
+          <div style="padding: 12px 20px; background: oklch(15% 0.04 72); border-bottom: 1px solid oklch(74% 0.14 74 / 0.12); display: flex; align-items: center; gap: 10px;">
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25); flex: none;"></div>
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25); flex: none;"></div>
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.25); flex: none;"></div>
+            <span style="font-family: 'Courier New', monospace; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.4); margin-left: 8px;">employee-holon.databook.md</span>
+          </div>
+          <!-- Metadata frontmatter -->
+          <div style="padding: 18px 24px; border-bottom: 1px solid oklch(74% 0.14 74 / 0.1); background: oklch(12% 0.04 72);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.4); letter-spacing: 0.08em; text-transform: uppercase;">metadata header</span>
+            </div>
+            <div style="font-family: 'Courier New', monospace; font-size: var(--type-label); color: var(--teal); line-height: 1.7;">---</div>
+            <div style="font-family: 'Courier New', monospace; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.55); line-height: 1.7;">title: <span style="color: var(--gold);">"Employee Holon"</span></div>
+            <div style="font-family: 'Courier New', monospace; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.55); line-height: 1.7;">type: <span style="color: var(--gold);">databook</span></div>
+            <div style="font-family: 'Courier New', monospace; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.55); line-height: 1.7;">state: <span style="color: oklch(67% 0.11 155);">open</span></div>
+            <div style="font-family: 'Courier New', monospace; font-size: var(--type-label); color: var(--teal); line-height: 1.7;">---</div>
+          </div>
+          <!-- Markdown content -->
+          <div style="padding: 18px 24px; border-bottom: 1px solid oklch(74% 0.14 74 / 0.1);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.4); letter-spacing: 0.08em; text-transform: uppercase;">markdown</span>
+            </div>
+            <div style="font-family: 'Courier New', monospace; font-size: var(--type-label); color: var(--gold); line-height: 1.7; font-weight: 500;"># Scene Graph</div>
+            <div style="font-family: 'Courier New', monospace; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.45); line-height: 1.7;">Agents, props, scenery, portals…</div>
+            <div style="font-family: 'Courier New', monospace; font-size: var(--type-label); color: var(--gold); line-height: 1.7; font-weight: 500; margin-top: 6px;"># Event Log</div>
+            <div style="font-family: 'Courier New', monospace; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.45); line-height: 1.7;">act, mutate, invalidate, clock…</div>
+          </div>
+          <!-- Code block -->
+          <div style="padding: 18px 24px; background: oklch(8% 0.02 72);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.4); letter-spacing: 0.08em; text-transform: uppercase;">code block</span>
+            </div>
+            <div style="font-family: 'Courier New', monospace; font-size: var(--type-label); color: var(--teal); line-height: 1.7;">```sparql</div>
+            <div style="font-family: 'Courier New', monospace; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.5); line-height: 1.7;">SELECT ?agent WHERE {</div>
+            <div style="font-family: 'Courier New', monospace; font-size: var(--type-label); color: oklch(74% 0.14 74 / 0.5); line-height: 1.7;">&nbsp;&nbsp;?agent a <span style="color: var(--gold);">hol:Character</span> . }</div>
+            <div style="font-family: 'Courier New', monospace; font-size: var(--type-label); color: var(--teal); line-height: 1.7;">```</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 24: HOLONS & AI (section break) -->
+  <section data-label="24" data-screen-label="24 — Holons &amp; AI" data-speaker-notes="We turn now to the intersection of holons and AI — three areas where the concepts we've covered become directly applicable: grounding language models, reducing the cost of authoring, and building intelligent bridges to data.">
+    <div style="background: var(--bg-cool); width: 100%; height: 100%; display: flex; align-items: center;">
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px; padding: 0 var(--pad-x);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.28em; text-transform: uppercase; color: var(--teal);">New Directions</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 96px; font-weight: 300; color: var(--fg); margin: 0; letter-spacing: -1px; text-align: center;">Holons &amp; AI</h2>
+        <div style="width: 80px; height: 1px; background: var(--teal); opacity: 0.6;"></div>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-h2); font-weight: 300; color: var(--fg); margin: 0; opacity: 0.65; text-align: center; letter-spacing: 0.04em;">Scope, grounding, and intelligent authorship</p>
+      </div>
+      <div style="flex: 0 0 480px; height: 100%; display: flex; align-items: center; justify-content: center;">
+        <div style="position: relative; width: 400px; height: 400px;">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid oklch(65% 0.10 195 / 0.12);"></div>
+          <div style="position: absolute; inset: 50px; border-radius: 50%; border: 1px solid oklch(65% 0.10 195 / 0.22);"></div>
+          <div style="position: absolute; inset: 100px; border-radius: 50%; border: 1px solid oklch(65% 0.10 195 / 0.36);"></div>
+          <div style="position: absolute; inset: 150px; border-radius: 50%; border: 1px solid oklch(65% 0.10 195 / 0.55);"></div>
+          <div style="position: absolute; inset: 200px; border-radius: 50%; border: 2px solid var(--teal); background: oklch(65% 0.10 195 / 0.12);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 25: GROUNDING LLMS -->
+  <section data-label="25" data-screen-label="25 — Grounding LLMs" data-speaker-notes="One major cause of LLM hallucinations is a lack of scope — too much ambiguity in entity resolution. A set of databooks can provide exactly that scope. It identifies what entities are currently in play, records the history of those entities, defines rules and boundaries for state transitions, and determines how information is projected to the user. This won't completely eliminate hallucinations, but will make them considerably less likely — especially in chat interactions.">
+    <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal);">Hallucinations</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Grounding LLMs with holons</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">A major cause of hallucinations is a <span style="color: var(--teal);">lack of scope</span> — too much ambiguity in entity resolution.</p>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty;">Databooks provide that scope — making hallucinations far less likely, especially for chat interactions. They will not completely eliminate them, but they significantly reduce the ambiguity that causes them.</p>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="width: 640px; border: 1.5px solid oklch(65% 0.10 195 / 0.28); border-radius: 10px; background: oklch(11% 0.04 195); overflow: hidden;">
+          <div style="padding: 16px 28px; border-bottom: 1px solid oklch(65% 0.10 195 / 0.15);">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(65% 0.10 195 / 0.5); letter-spacing: 0.1em; text-transform: uppercase;">Databook scope provides</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; padding: 20px 28px; border-bottom: 1px solid oklch(65% 0.10 195 / 0.1);">
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--teal); flex: none;"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); flex: 1;">Entities currently in play</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(65% 0.10 195 / 0.5); font-style: italic; white-space: nowrap;">Scene Graph</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; padding: 20px 28px; border-bottom: 1px solid oklch(65% 0.10 195 / 0.1);">
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--teal); flex: none;"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); flex: 1;">History of each entity</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(65% 0.10 195 / 0.5); font-style: italic; white-space: nowrap;">Event Graph</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; padding: 20px 28px; border-bottom: 1px solid oklch(65% 0.10 195 / 0.1);">
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--teal); flex: none;"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); flex: 1;">Rules for state transitions</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(65% 0.10 195 / 0.5); font-style: italic; white-space: nowrap;">Boundary</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; padding: 20px 28px; border-bottom: 1px solid oklch(65% 0.10 195 / 0.1);">
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--teal); flex: none;"></div>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); flex: 1;">How information is projected to the user</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(65% 0.10 195 / 0.5); font-style: italic; white-space: nowrap;">Projection Layer</span>
+          </div>
+          <div style="padding: 16px 28px;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: oklch(65% 0.10 195 / 0.55); font-style: italic;">Each maps directly to a holon aspect.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 26: AI AUTHORING & HOLON BRIDGES -->
+  <section data-label="26" data-screen-label="26 — AI Authoring &amp; Bridges" data-speaker-notes="AI systems can also be used to help compose both data-centered and holon databooks, using a skills.md architecture alongside MCP. This minimises the cost and complexity of authoring considerably. Holon Bridges provide mechanisms for retrieving and updating data stores, especially when coupled with agentic systems and chat. Dialog-based AI especially benefits from the cues databooks provide when generating final output.">
+    <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 520px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal);">Authoring &amp; Retrieval</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">AI as author and bridge</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">AI reduces the cost of composing holons — and holon architecture enables better AI output.</p>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 28px;">
+        <!-- AI Composition card -->
+        <div style="background: oklch(16% 0.05 195); border-radius: 8px; padding: 36px 44px; display: flex; flex-direction: column; gap: 18px; border-left: 3px solid var(--teal);">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.15;">AI Composition</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;">AI systems can compose data-centered and holon databooks using a <span style="color: var(--teal);">skills.md architecture</span> alongside MCP — minimising authoring cost and complexity considerably.</p>
+        </div>
+        <!-- Holon Bridges card -->
+        <div style="background: oklch(18% 0.06 72); border-radius: 8px; padding: 36px 44px; display: flex; flex-direction: column; gap: 18px; border-left: 3px solid var(--gold);">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.15;">Holon Bridges</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;">Provide mechanisms for retrieving and updating data stores — especially coupled with <span style="color: var(--gold);">agentic systems</span> and chat. Dialog-based AI benefits from the cues databooks provide when generating final output.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 27: ARENAS -->
+  <section data-label="27" data-screen-label="27 — Arenas for Holons" data-speaker-notes="Holons provide a structured foundation for complex, stateful systems across many domains.">
+    <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 420px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Applications</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Arenas for holons</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">Holons provide a foundation for complex, stateful, narrative-driven systems across a wide range of domains.</p>
+      </div>
+      <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 60px; align-content: center;">
+        <div style="display: flex; gap: 16px; align-items: center;"><div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex: none;"></div><span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Media &amp; gaming</span></div>
+        <div style="display: flex; gap: 16px; align-items: center;"><div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex: none;"></div><span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Journalism &amp; education</span></div>
+        <div style="display: flex; gap: 16px; align-items: center;"><div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex: none;"></div><span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Decision support</span></div>
+        <div style="display: flex; gap: 16px; align-items: center;"><div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex: none;"></div><span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Marketing &amp; market tracking</span></div>
+        <div style="display: flex; gap: 16px; align-items: center;"><div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex: none;"></div><span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Supply chain management</span></div>
+        <div style="display: flex; gap: 16px; align-items: center;"><div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex: none;"></div><span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Financial system monitoring</span></div>
+        <div style="display: flex; gap: 16px; align-items: center;"><div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex: none;"></div><span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Medical system monitoring</span></div>
+        <div style="display: flex; gap: 16px; align-items: center;"><div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex: none;"></div><span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Distributed private data meshes</span></div>
+        <div style="display: flex; gap: 16px; align-items: center;"><div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex: none;"></div><span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg);">Robotic &amp; drone traffic control</span></div>
+        <div style="display: flex; gap: 16px; align-items: center;"><div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(74% 0.14 74 / 0.4); flex: none;"></div><span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); font-style: italic;">Many others</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 28: GOALS -->
+  <section data-label="28" data-screen-label="28 — Community Group Goals" data-speaker-notes="The Holon Community Group has four core goals: refine the models, establish conventions, identify implementations and points of commonality, and develop the foundations for a federated distributed data web built on top of the World Wide Web.">
+    <div style="background: var(--bg-cool); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 460px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal);">Community</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Goals for the Holon Community Group</h2>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: var(--gap-md); justify-content: center;">
+        <div style="display: flex; align-items: flex-start; gap: 32px;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 64px; color: var(--teal); font-weight: 300; line-height: 1; flex: 0 0 52px;">1</span>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.5;">Refine these models</p>
+        </div>
+        <div style="height: 1px; background: oklch(65% 0.10 195 / 0.12); margin-left: 84px;"></div>
+        <div style="display: flex; align-items: flex-start; gap: 32px;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 64px; color: var(--teal); font-weight: 300; line-height: 1; flex: 0 0 52px;">2</span>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.5; text-wrap: pretty;">Establish conventions for messaging and holon core architectures</p>
+        </div>
+        <div style="height: 1px; background: oklch(65% 0.10 195 / 0.12); margin-left: 84px;"></div>
+        <div style="display: flex; align-items: flex-start; gap: 32px;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 64px; color: var(--teal); font-weight: 300; line-height: 1; flex: 0 0 52px;">3</span>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.5; text-wrap: pretty;">Identify potential implementations and points of commonality between them</p>
+        </div>
+        <div style="height: 1px; background: oklch(65% 0.10 195 / 0.12); margin-left: 84px;"></div>
+        <div style="display: flex; align-items: flex-start; gap: 32px;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 64px; color: var(--teal); font-weight: 300; line-height: 1; flex: 0 0 52px;">4</span>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.5; text-wrap: pretty;">Develop the foundations for a federated distributed data web, built on top of the World Wide Web</p>
+        </div>
+        <div style="height: 1px; background: oklch(65% 0.10 195 / 0.12); margin-left: 84px;"></div>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; margin-left: 84px; line-height: 1.65; text-wrap: pretty; font-style: italic;">Year-one success: agreed core vocabulary, at least one reference implementation, and a stable databook format specification open to all participants.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 29: CONSIDERATIONS -->
+  <section data-label="29" data-screen-label="29 — Considerations" data-speaker-notes="Three key considerations for the community group: the focus is on interoperability, data-format agnostic architecture even if early implementations use RDF 1.2. The HCG specifications are not a W3C Endorsed Recommendation yet, though parts may be presented to the W3C later. IP rights policies are yet to be decided, likely following W3C licensing conventions.">
+    <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 420px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Process</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Considerations</h2>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 32px; justify-content: center;">
+        <div style="background: oklch(16% 0.05 72); border-radius: 8px; padding: 32px 40px; display: flex; flex-direction: column; gap: 12px; border-left: 3px solid var(--gold);">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em;">Interoperability</span>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); margin: 0; line-height: 1.6; text-wrap: pretty;">Focus is on interoperability. While early implementations will likely use the RDF 1.2 stack, the architecture itself should be data-format agnostic.</p>
+        </div>
+        <div style="background: oklch(16% 0.05 72); border-radius: 8px; padding: 32px 40px; display: flex; flex-direction: column; gap: 12px; border-left: 3px solid var(--gold);">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em;">W3C Status</span>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); margin: 0; line-height: 1.6; text-wrap: pretty;">HCG specifications are not a W3C Endorsed Recommendation, though parts may be presented to the W3C for consideration under their processes at a later date.</p>
+        </div>
+        <div style="background: oklch(16% 0.05 72); border-radius: 8px; padding: 32px 40px; display: flex; flex-direction: column; gap: 12px; border-left: 3px solid var(--gold);">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em;">IP Rights</span>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); margin: 0; line-height: 1.6; text-wrap: pretty;">IP rights policies are yet to be decided, though likely will align with W3C policies with regard to licensing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 30: WORKING GROUPS -->
+  <section data-label="30" data-screen-label="30 — Working Groups" data-speaker-notes="Five working groups are proposed within the community group: Holon Core Architecture, Databooks, Holon Network Architecture, Validation/Verification/Security Patterns, and Industry Utilisation. Suggestions are open for other groups, or for consolidating these.">
+    <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+      <div style="flex: 0 0 460px; display: flex; flex-direction: column; gap: var(--gap-md);">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Organisation</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Working groups</h2>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty; font-style: italic;">Suggestions are open for other groups, or for consolidating these.</p>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 20px; justify-content: center;">
+        <div style="display: flex; align-items: flex-start; gap: 28px; padding: 20px 36px; background: oklch(16% 0.06 72); border-radius: 6px; border-left: 3px solid var(--gold);">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 40px; color: var(--gold); font-weight: 300; line-height: 1.3; flex: 0 0 32px;">I</span>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); font-weight: 300;">Holon Core Architecture</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic; line-height: 1.4;">Define the canonical holon model, vocabulary, and reference patterns across implementations.</span>
+          </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 28px; padding: 20px 36px; background: oklch(16% 0.06 72); border-radius: 6px; border-left: 3px solid var(--gold);">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 40px; color: var(--gold); font-weight: 300; line-height: 1.3; flex: 0 0 32px;">II</span>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); font-weight: 300;">Databooks</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic; line-height: 1.4;">Establish the databook format specification — metadata conventions, code block patterns, and exchange protocols.</span>
+          </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 28px; padding: 20px 36px; background: oklch(16% 0.06 72); border-radius: 6px; border-left: 3px solid var(--gold);">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 40px; color: var(--gold); font-weight: 300; line-height: 1.3; flex: 0 0 32px;">III</span>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); font-weight: 300;">Holon Network Architecture</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic; line-height: 1.4;">Design federation and distribution protocols for connected holon systems across the web.</span>
+          </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 28px; padding: 20px 36px; background: oklch(16% 0.06 72); border-radius: 6px; border-left: 3px solid var(--gold);">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 40px; color: var(--gold); font-weight: 300; line-height: 1.3; flex: 0 0 32px;">IV</span>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); font-weight: 300;">Validation / Verification / Security Patterns</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic; line-height: 1.4;">Define constraint languages, verification rules, and security boundaries — SHACL and beyond.</span>
+          </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 28px; padding: 20px 36px; background: oklch(16% 0.06 72); border-radius: 6px; border-left: 3px solid var(--gold);">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 40px; color: var(--gold); font-weight: 300; line-height: 1.3; flex: 0 0 32px;">V</span>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); font-weight: 300;">Industry Utilisation</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); font-style: italic; line-height: 1.4;">Develop domain-specific profiles and reference implementations for target sectors.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 31: THANK YOU -->
+  <section data-label="31" data-screen-label="31 — Thank You" data-speaker-notes="Thank you for your involvement. Questions and discussion welcome.">
+    <div style="background: var(--bg-warm); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 36px; padding: 0 var(--pad-x); box-sizing: border-box;">
+      <div style="width: 60px; height: 1px; background: var(--gold); opacity: 0.5;"></div>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 96px; font-weight: 300; color: var(--fg); margin: 0; text-align: center; line-height: 1.05; letter-spacing: -1px;">Thank you for<br>your involvement.</h2>
+      <div style="width: 60px; height: 1px; background: var(--gold); opacity: 0.5;"></div>
+      <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-h2); font-weight: 300; color: var(--fg); margin: 0; opacity: 0.55; text-align: center; letter-spacing: 0.04em;">Holon Community Group</p>
+    </div>
+  </section>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1920, &quot;height&quot;: 1080 },
+  &quot;accentColor&quot;: {
+    &quot;editor&quot;: &quot;enum&quot;,
+    &quot;options&quot;: [&quot;gold&quot;, &quot;teal&quot;, &quot;coral&quot;, &quot;sage&quot;],
+    &quot;default&quot;: &quot;gold&quot;,
+    &quot;tsType&quot;: &quot;string&quot;
+  }
+}">
+class Component extends DCLogic {
+  componentDidMount() { this._applyAccent(); }
+  componentDidUpdate() { this._applyAccent(); }
+  _applyAccent() {
+    const map = {
+      gold:  'oklch(74% 0.14 74)',
+      teal:  'oklch(65% 0.12 195)',
+      coral: 'oklch(72% 0.15 18)',
+      sage:  'oklch(67% 0.11 155)'
+    };
+    const c = map[this.props.accentColor] ?? map.gold;
+    document.documentElement.style.setProperty('--gold', c);
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
