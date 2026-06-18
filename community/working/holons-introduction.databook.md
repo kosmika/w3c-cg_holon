@@ -2,7 +2,7 @@
 title: "Holons: An Introduction"
 type: databook
 format: markdown
-version: 1.2
+version: 1.3
 created: 2026-06-17
 revised: 2026-06-18
 audience: informed technical generalist
@@ -162,6 +162,24 @@ The Scene is the **knowledge graph** for the holon — the stage on which the na
 - **Scenery** — the environment and backdrop
 - **Portals** — connections to other holons
 - **Originating states** — baseline values from which changes are measured
+
+### Agents
+
+An agent is an entity whose **state changes are worth tracking** within a holon. Every agent is an entity; every entity can also be a holon in its own right. Scale is always relative — a person is an agent within an organisation holon, and simultaneously a holon with their own scene, events, and boundary.
+
+The scene graph distinguishes three kinds of entity:
+
+**Agents** are entities whose state the holon tracks over time. Each state change produces an event; the ordered sequence of events for an agent is its **trajectory**.
+
+**Props** are entities the holon references but does not track independently. A prop participates in events — acquired, used, transferred, destroyed — but has no trajectory of its own.
+
+**Scenery** is environmental context the holon assumes without tracking. A room is scenery; a door within it may be a prop or an agent depending on whether its state matters to the holon.
+
+The same entity can be an agent in one holon and a prop in another — agenthood is a scoping decision, not an intrinsic property.
+
+**Holon Agents and AI Agents**
+
+In current AI usage, *agent* implies autonomy and goal-directedness. In holon usage, *agent* means any entity with a trackable identity and state — which includes people, organisations, documents, devices, and physical objects, not only autonomous systems. Where the two coincide — an AI system operating as a tracked entity within a holon — the holon architecture provides exactly what the AI agent needs: a scene, an event log, a boundary, and cameras.
 
 ### 2. Event Graph
 
