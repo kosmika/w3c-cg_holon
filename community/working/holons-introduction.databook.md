@@ -2,7 +2,7 @@
 title: "Holons: An Introduction"
 type: databook
 format: markdown
-version: 1.3
+version: 1.4
 created: 2026-06-17
 revised: 2026-06-18
 audience: informed technical generalist
@@ -398,6 +398,16 @@ IP rights policies are yet to be decided, though likely will align with W3C poli
 | V — Industry Utilisation | Domain applications | Develop domain-specific profiles and reference implementations for target sectors |
 
 Suggestions are open for other groups, or for consolidating these.
+
+### Meeting Cadence
+
+The Holon Community Group meets twice monthly, on alternating Fridays, 7:00–9:00 AM Pacific / 15:00–17:00 GMT / 16:00–18:00 CET. This schedule makes meetings accessible to participants in Western and Central Europe without unreasonable early starts on the Pacific coast.
+
+A third monthly session will be scheduled at a time accessible to participants in Eastern Europe, the Middle East, and the Asia-Pacific region. The time for this session will be determined once membership distribution is established.
+
+All meetings are open to HCG members. Agendas are published to the GitHub repository at least 48 hours in advance. Minutes are published to the repository within one week of each meeting.
+
+Working groups meet independently at cadences agreed by their members, and report to the full group at each plenary session.
 
 ---
 
