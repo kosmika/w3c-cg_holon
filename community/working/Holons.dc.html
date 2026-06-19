@@ -6,6 +6,15 @@
 <script src="./support.js"></script>
 </head>
 <body>
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#0E0C0A"/>
+    <circle cx="50" cy="50" r="32" fill="none" stroke="oklch(74% 0.14 74 / 0.25)" stroke-width="1.4"/>
+    <circle cx="50" cy="50" r="23" fill="none" stroke="oklch(74% 0.14 74 / 0.45)" stroke-width="1.4"/>
+    <circle cx="50" cy="50" r="14" fill="none" stroke="oklch(74% 0.14 74 / 0.7)" stroke-width="1.4"/>
+    <circle cx="50" cy="50" r="6" fill="oklch(74% 0.14 74)"/>
+  </svg>
+</template>
 <x-dc>
 <helmet>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -37,7 +46,7 @@
 <x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
 
   <!-- SLIDE 01: TITLE -->
-  <section data-label="01" data-screen-label="01 — Title" data-speaker-notes="Welcome. Today we're exploring one of the most quietly profound ideas in science and philosophy — the concept of the holon. By the end of this talk, you'll start seeing this pattern everywhere.">
+  <section data-label="Title" data-screen-label="01 — Title" data-speaker-notes="Welcome. Today we're exploring one of the most quietly profound ideas in science and philosophy — the concept of the holon. By the end of this talk, you'll start seeing this pattern everywhere.">
     <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center;">
       <div style="padding: 0 var(--pad-x); flex: 1; display: flex; flex-direction: column; gap: 28px;">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold);">Systems Thinking</span>
@@ -59,7 +68,7 @@
   </section>
 
   <!-- SLIDE 02: WHAT IS A HOLON? -->
-  <section data-label="02" data-screen-label="02 — What Is a Holon?" data-speaker-notes="At its core, a holon is something that is simultaneously a complete whole AND a part of something larger. Koestler coined the word from the Greek holos — whole — and the suffix -on, meaning particle or part.">
+  <section data-label="What Is a Holon?" data-screen-label="02 — What Is a Holon?" data-speaker-notes="At its core, a holon is something that is simultaneously a complete whole AND a part of something larger. Koestler coined the word from the Greek holos — whole — and the suffix -on, meaning particle or part.">
     <div style="background: var(--bg); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 52px;">
       <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); align-self: flex-start;">Definition</span>
       <div style="display: flex; align-items: stretch; width: 100%; gap: 3px; height: 260px;">
@@ -78,7 +87,7 @@
   </section>
 
   <!-- SLIDE 03: ARTHUR KOESTLER -->
-  <section data-label="03" data-screen-label="03 — Arthur Koestler" data-speaker-notes="Koestler introduced this concept in The Ghost in the Machine, published in 1967. He was wrestling with a deep puzzle: how can something be both autonomous and dependent at the same time? His answer: it always is both, simultaneously — and we simply hadn't had a word for that until now.">
+  <section data-label="Arthur Koestler" data-screen-label="03 — Arthur Koestler" data-speaker-notes="Koestler introduced this concept in The Ghost in the Machine, published in 1967. He was wrestling with a deep puzzle: how can something be both autonomous and dependent at the same time? His answer: it always is both, simultaneously — and we simply hadn't had a word for that until now.">
     <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--pad-y) 200px; box-sizing: border-box; gap: 40px;">
       <div style="width: 60px; height: 1px; background: var(--gold); opacity: 0.5;"></div>
       <blockquote style="font-family: 'Cormorant Garamond', serif; font-size: 56px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0; text-align: center; line-height: 1.4; max-width: 1380px; text-wrap: pretty;">"I have coined the word <span style="color: var(--gold); font-style: normal;">holon</span> for these Janus-faced entities which are simultaneously wholes and parts."</blockquote>
@@ -91,7 +100,7 @@
   </section>
 
   <!-- SLIDE 04: TWO TENDENCIES -->
-  <section data-label="04" data-screen-label="04 — Two Tendencies" data-speaker-notes="Koestler identified two opposing but complementary tendencies in every holon. The self-assertive tendency preserves its own identity and autonomy. The integrative tendency allows it to function as a part of something larger. Both must coexist — remove either and the system either fragments or is absorbed.">
+  <section data-label="Two Tendencies" data-screen-label="04 — Two Tendencies" data-speaker-notes="Koestler identified two opposing but complementary tendencies in every holon. The self-assertive tendency preserves its own identity and autonomy. The integrative tendency allows it to function as a part of something larger. Both must coexist — remove either and the system either fragments or is absorbed.">
     <div style="background: var(--bg); width: 100%; height: 100%; display: flex; flex-direction: column; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: var(--gap-lg);">
       <div style="display: flex; flex-direction: column; gap: 12px;">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">The Janus Face</span>
@@ -119,7 +128,7 @@
   </section>
 
   <!-- SLIDE 05: HOLARCHIES -->
-  <section data-label="05" data-screen-label="05 — Holarchies" data-speaker-notes="When holons are nested within holons, the resulting structure is called a holarchy. Unlike a traditional hierarchy that privileges the top, a holarchy treats every level as equally real — just differently scoped. There is no absolute top or bottom.">
+  <section data-label="Holarchies" data-screen-label="05 — Holarchies" data-speaker-notes="When holons are nested within holons, the resulting structure is called a holarchy. Unlike a traditional hierarchy that privileges the top, a holarchy treats every level as equally real — just differently scoped. There is no absolute top or bottom.">
     <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 580px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Structure</span>
@@ -146,7 +155,7 @@
   </section>
 
   <!-- SLIDE 06: NATURE'S HOLARCHY -->
-  <section data-label="06" data-screen-label="06 — Nature's Holarchy" data-speaker-notes="Nature is the original holarchist. The chain from atoms to ecosystems is a perfect holarchy. Each level is complete and functional at its scale, and each is a component of a larger system. Remove any level and the whole falls apart.">
+  <section data-label="Nature's Holarchy" data-screen-label="06 — Nature's Holarchy" data-speaker-notes="Nature is the original holarchist. The chain from atoms to ecosystems is a perfect holarchy. Each level is complete and functional at its scale, and each is a component of a larger system. Remove any level and the whole falls apart.">
     <div style="background: var(--bg-warm); width: 100%; height: 100%; display: flex; flex-direction: column; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: var(--gap-md);">
       <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Nature</span>
       <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0;">Nature's holarchy</h2>
@@ -199,7 +208,7 @@
   </section>
 
   <!-- SLIDE 07: ORGANIZATIONS -->
-  <section data-label="07" data-screen-label="07 — Organizations" data-speaker-notes="Organizations are holarchies too. Each individual is a whole person, also a member of a team, which is part of a department, part of a company. Real-world applications include Holacracy and Team organizations — both distribute authority while maintaining coherence, because they treat every role as a holon.">
+  <section data-label="Organizations" data-screen-label="07 — Organizations" data-speaker-notes="Organizations are holarchies too. Each individual is a whole person, also a member of a team, which is part of a department, part of a company. Real-world applications include Holacracy and Team organizations — both distribute authority while maintaining coherence, because they treat every role as a holon.">
     <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 560px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Organizations</span>
@@ -230,7 +239,7 @@
   </section>
 
   <!-- SLIDE 08: EMERGENCE -->
-  <section data-label="08" data-screen-label="08 — Emergence" data-speaker-notes="One of the most powerful insights from holonic thinking is emergence: each level of a holarchy has properties that simply cannot be found in its components. The whole is genuinely greater than the sum of its parts.">
+  <section data-label="Emergence" data-screen-label="08 — Emergence" data-speaker-notes="One of the most powerful insights from holonic thinking is emergence: each level of a holarchy has properties that simply cannot be found in its components. The whole is genuinely greater than the sum of its parts.">
     <div style="background: var(--bg-cool); width: 100%; height: 100%; display: flex; flex-direction: column; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: var(--gap-lg);">
       <div style="display: flex; flex-direction: column; gap: 12px;">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal);">Systems Thinking</span>
@@ -260,7 +269,7 @@
   </section>
 
   <!-- SLIDE 09: TECHNOLOGY -->
-  <section data-label="09" data-screen-label="09 — Technology" data-speaker-notes="Software engineering has independently arrived at holonic architecture. Functions, modules, services, applications, and platforms form a perfect holarchy. Microservices, component-based design, and APIs are all expressions of the same underlying principle: build things that are both self-contained and composable.">
+  <section data-label="Technology" data-screen-label="09 — Technology" data-speaker-notes="Software engineering has independently arrived at holonic architecture. Functions, modules, services, applications, and platforms form a perfect holarchy. Microservices, component-based design, and APIs are all expressions of the same underlying principle: build things that are both self-contained and composable.">
     <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 560px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Technology</span>
@@ -297,7 +306,7 @@
   </section>
 
   <!-- SLIDE 10: KEY TAKEAWAYS -->
-  <section data-label="10" data-screen-label="10 — Key Takeaways" data-speaker-notes="To close: holons give us a lens to understand nested complexity in any domain. The key shift is from either/or thinking — whole OR part — to both/and. Every thing is always both. That shift changes how you see organizations, software, nature, and your own place within larger systems.">
+  <section data-label="Key Takeaways" data-screen-label="10 — Key Takeaways" data-speaker-notes="To close: holons give us a lens to understand nested complexity in any domain. The key shift is from either/or thinking — whole OR part — to both/and. Every thing is always both. That shift changes how you see organizations, software, nature, and your own place within larger systems.">
     <div style="background: var(--bg-warm); width: 100%; height: 100%; display: flex; flex-direction: column; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: var(--gap-lg);">
       <div style="display: flex; flex-direction: column; gap: 12px;">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Key Ideas</span>
@@ -328,7 +337,7 @@
   </section>
 
   <!-- SLIDE WHY: WHY NOW -->
-  <section data-label="Why" data-screen-label="Why — Why Holons, Why Now" data-speaker-notes="The question isn't only what holons are — it's why the time for a structured community effort is now. Three forces are converging: existing knowledge graph architectures hit limits in complex stateful domains; the AI integration moment demands grounded, scoped context; and the maturation of RDF 1.2, SHACL, and MCP provides the tooling. This is not a moment for a single vendor implementation — it's a moment for shared conventions.">
+  <section data-label="Why Holons, Why Now" data-screen-label="11 — Why Holons, Why Now" data-speaker-notes="The question isn't only what holons are — it's why the time for a structured community effort is now. Three forces are converging: existing knowledge graph architectures hit limits in complex stateful domains; the AI integration moment demands grounded, scoped context; and the maturation of RDF 1.2, SHACL, and MCP provides the tooling. This is not a moment for a single vendor implementation — it's a moment for shared conventions.">
     <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; flex-direction: column; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: var(--gap-lg);">
       <div style="display: flex; flex-direction: column; gap: 12px;">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Founding Argument</span>
@@ -352,7 +361,7 @@
   </section>
 
   <!-- SLIDE 11: LATERAL CONNECTIONS -->
-  <section data-label="11" data-screen-label="11 — Lateral Connections" data-speaker-notes="Beyond nesting, holons can also connect laterally — through what we might call interconnected doorways. A room is a holon; hallways connect it to other rooms. A city is a holon; routes connect it to other cities. A concept is a holon; relationships connect it to other concepts. These lateral connections let us navigate between different domains of concern while still bearing a relationship to the original holon.">
+  <section data-label="Lateral Connections" data-screen-label="12 — Lateral Connections" data-speaker-notes="Beyond nesting, holons can also connect laterally — through what we might call interconnected doorways. A room is a holon; hallways connect it to other rooms. A city is a holon; routes connect it to other cities. A concept is a holon; relationships connect it to other concepts. These lateral connections let us navigate between different domains of concern while still bearing a relationship to the original holon.">
     <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Connections</span>
@@ -420,7 +429,7 @@
   </section>
 
   <!-- SLIDE 12: HOLONS AS NAMED GRAPHS -->
-  <section data-label="12" data-screen-label="12 — Holons as Named Graphs" data-speaker-notes="Beyond nesting and lateral connections, holons also form graphs. These graphs are self-contained — they have a clear boundary defining membership, which is why we call them named graphs. Crucially they are temporal: they don't just capture a snapshot of structure; they record a history of events — changes to the state of items within the graph over time.">
+  <section data-label="Holons as Named Graphs" data-screen-label="13 — Holons as Named Graphs" data-speaker-notes="Beyond nesting and lateral connections, holons also form graphs. These graphs are self-contained — they have a clear boundary defining membership, which is why we call them named graphs. Crucially they are temporal: they don't just capture a snapshot of structure; they record a history of events — changes to the state of items within the graph over time.">
     <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Graph Theory</span>
@@ -481,7 +490,7 @@
   </section>
 
   <!-- SLIDE 13: AGENTS & TRAJECTORIES -->
-  <section data-label="13" data-screen-label="13 — Agents &amp; Trajectories" data-speaker-notes="Within a holon's graph, the items that change are called agents. An agent is an observable — something you can watch and measure within the holon. Each time an agent changes state, that is an event. The complete sequence of events for a given agent is its trajectory within the holon — the path it traces through state space over time. A note on terminology: in current AI usage, 'agent' implies autonomy and goal-directedness — an LLM with tool access, a planning system. In holon usage, 'agent' means any entity with a trackable identity and state — which includes people, organisations, documents, and devices, not only autonomous systems. Where the two coincide — an AI system operating as a tracked entity within a holon — the holon architecture provides exactly what the AI agent needs: a scene to act in, an event log of its actions, a boundary constraining what it may do, and cameras projecting its behaviour to observers.">
+  <section data-label="Agents &amp; Trajectories" data-screen-label="14 — Agents &amp; Trajectories" data-speaker-notes="Within a holon's graph, the items that change are called agents. An agent is an observable — something you can watch and measure within the holon. Each time an agent changes state, that is an event. The complete sequence of events for a given agent is its trajectory within the holon — the path it traces through state space over time.">
     <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Dynamics</span>
@@ -547,7 +556,7 @@
   </section>
 
   <!-- SLIDE 14: SCOPE -->
-  <section data-label="14" data-screen-label="14 — Scope" data-speaker-notes="Holons introduce a concept analogous to scope in programming languages. A containing holon may declare entities — agents are entities — that its contained holons can reference. A holon can also include another holon to gain access to its declared entities, with restrictions on what can be referenced.">
+  <section data-label="Scope" data-screen-label="15 — Scope" data-speaker-notes="Holons introduce a concept analogous to scope in programming languages. A containing holon may declare entities — agents are entities — that its contained holons can reference. A holon can also include another holon to gain access to its declared entities, with restrictions on what can be referenced.">
     <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Scope</span>
@@ -591,7 +600,7 @@
   </section>
 
   <!-- SLIDE 15: SEMANTIC GRAPHS -->
-  <section data-label="15" data-screen-label="15 — Semantic Graphs" data-speaker-notes="Here's a concrete example. An employee entity is declared within the company holon. Both the HR holon and the R&D holon can reference that same employee — but for completely different purposes. HR sees the employee in terms of benefits and roles; R&D sees them in terms of projects and skills. This shared referencing across contexts is why holons and semantic graphs are such a natural fit.">
+  <section data-label="Semantic Graphs" data-screen-label="16 — Semantic Graphs" data-speaker-notes="Here's a concrete example. An employee entity is declared within the company holon. Both the HR holon and the R&D holon can reference that same employee — but for completely different purposes. HR sees the employee in terms of benefits and roles; R&D sees them in terms of projects and skills. This shared referencing across contexts is why holons and semantic graphs are such a natural fit.">
     <div style="background: var(--bg-warm); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Semantic Graphs</span>
@@ -630,7 +639,7 @@
   </section>
 
   <!-- SLIDE 16: FOUR ASPECTS -->
-  <section data-label="16" data-screen-label="16 — Four Aspects" data-speaker-notes="Every holon can be understood through four design partitions. The scene graph holds the internal state. The context or event graph records mutations to agents over time. The boundary defines the rules governing the system's evolution. And projection layers represent the different views available to external observers. These are conceptual partitions rather than formal graph structures.">
+  <section data-label="Four Aspects" data-screen-label="17 — Four Aspects" data-speaker-notes="Every holon can be understood through four design partitions. The scene graph holds the internal state. The context or event graph records mutations to agents over time. The boundary defines the rules governing the system's evolution. And projection layers represent the different views available to external observers. These are conceptual partitions rather than formal graph structures.">
     <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 500px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Four Aspects</span>
@@ -670,7 +679,7 @@
   </section>
 
   <!-- SLIDE 17: THE SCENE GRAPH -->
-  <section data-label="17" data-screen-label="17 — The Scene Graph" data-speaker-notes="The Scene Graph is the knowledge graph for the holon — the stage on which everything is set. It contains the agents (characters), props, scenery, portals, and so on that participate in the holon. It may also record originating states for entities — the baseline from which changes are measured.">
+  <section data-label="The Scene Graph" data-screen-label="18 — The Scene Graph" data-speaker-notes="The Scene Graph is the knowledge graph for the holon — the stage on which everything is set. It contains the agents (characters), props, scenery, portals, and so on that participate in the holon. It may also record originating states for entities — the baseline from which changes are measured.">
     <div style="background: var(--bg-warm); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Aspect 1</span>
@@ -716,8 +725,57 @@
     </div>
   </section>
 
+  <!-- SLIDE: THREE KINDS OF ENTITY -->
+  <section data-label="Three Kinds of Entity" data-screen-label="19 — Three Kinds of Entity" data-speaker-notes="Within a scene, an agent is an entity whose state changes are worth tracking. Every agent is an entity, and every entity can itself be a holon — scale is always relative. The scene graph distinguishes three kinds of entity: agents, which the holon tracks over time and which have trajectories; props, which participate in events but have no trajectory of their own; and scenery, environmental context the holon assumes without tracking. The same entity can be an agent in one holon and a prop in another — agenthood is a scoping decision, not an intrinsic property.">
+    <div style="background: var(--bg); width: 100%; height: 100%; display: flex; flex-direction: column; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: var(--gap-lg);">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Scene Graph · Entities</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Three kinds of entity</h2>
+      </div>
+      <div style="flex: 1; display: flex; gap: 32px; align-items: stretch;">
+        <div style="flex: 1; background: oklch(22% 0.07 72); border-radius: 8px; padding: 44px; display: flex; flex-direction: column; gap: 18px; border-top: 3px solid var(--gold);">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0;">Agents</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;">Entities whose state the holon <span style="color: var(--gold);">tracks over time</span>. Each state change produces an event; the ordered sequence is the agent's trajectory.</p>
+        </div>
+        <div style="flex: 1; background: oklch(18% 0.05 195); border-radius: 8px; padding: 44px; display: flex; flex-direction: column; gap: 18px; border-top: 3px solid var(--teal);">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0;">Props</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;">Entities the holon references but does <span style="color: var(--teal);">not track</span> independently. A prop participates in events — acquired, used, transferred — but has no trajectory.</p>
+        </div>
+        <div style="flex: 1; background: oklch(22% 0.07 72); border-radius: 8px; padding: 44px; display: flex; flex-direction: column; gap: 18px; border-top: 3px solid var(--gold);">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0;">Scenery</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;">Environmental <span style="color: var(--gold);">context</span> the holon assumes without tracking. A room is scenery; a door may be a prop or agent if its state matters.</p>
+        </div>
+      </div>
+      <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); margin: 0; text-align: center; font-style: italic; text-wrap: pretty;">The same entity can be an agent in one holon and a prop in another — agenthood is a scoping decision, not an intrinsic property.</p>
+    </div>
+  </section>
+
+  <!-- SLIDE: HOLON AGENTS vs AI AGENTS -->
+  <section data-label="Holon Agents vs AI Agents" data-screen-label="20 — Holon Agents vs AI Agents" data-speaker-notes="The word agent means different things in different communities. In current AI usage, an agent implies autonomy and goal-directedness. In holon usage, an agent is any entity with a trackable identity and state — people, organisations, documents, devices, physical objects, not only autonomous systems. Where the two coincide — an AI system operating as a tracked entity within a holon — the holon architecture provides exactly what the AI agent needs: a scene, an event log, a boundary, and cameras.">
+    <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; flex-direction: column; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: var(--gap-lg);">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Terminology</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Two meanings of "agent"</h2>
+      </div>
+      <div style="flex: 1; display: flex; gap: 3px; align-items: stretch;">
+        <div style="flex: 1; background: oklch(16% 0.05 195); border-radius: 8px 0 0 8px; padding: 52px; display: flex; flex-direction: column; gap: 22px;">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); font-weight: 500; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase;">AI Agent</span>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.2; font-style: italic;">Implies autonomy and goal-directedness</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;">A system that perceives, decides, and acts toward objectives — the prevailing meaning in current AI usage.</p>
+        </div>
+        <div style="width: 3px; background: var(--gold); opacity: 0.55; flex: none;"></div>
+        <div style="flex: 1; background: oklch(22% 0.07 72); border-radius: 0 8px 8px 0; padding: 52px; display: flex; flex-direction: column; gap: 22px;">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); font-weight: 500; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase;">Holon Agent</span>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--fg); margin: 0; line-height: 1.2; font-style: italic;">Any entity with trackable identity and state</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;">People, organisations, documents, devices, physical objects — not only autonomous systems.</p>
+        </div>
+      </div>
+      <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; text-align: center; opacity: 0.85; text-wrap: pretty; line-height: 1.5;">Where the two coincide, a holon gives an AI agent exactly what it needs — <span style="color: var(--gold);">a scene, an event log, a boundary, and cameras.</span></p>
+    </div>
+  </section>
+
   <!-- SLIDE 18: THE EVENT GRAPH -->
-  <section data-label="18" data-screen-label="18 — The Event Graph" data-speaker-notes="The Event Graph records changes — what agents say or do, mutations of agent state, invalidation events, clock events, and more. In a stage play this is the action log of the scene over time. It is also known as the context graph. Together with the Scene Graph, it gives a full picture of the holon's history.">
+  <section data-label="The Event Graph" data-screen-label="21 — The Event Graph" data-speaker-notes="The Event Graph records changes — what agents say or do, mutations of agent state, invalidation events, clock events, and more. In a stage play this is the action log of the scene over time. It is also known as the context graph. Together with the Scene Graph, it gives a full picture of the holon's history.">
     <div style="background: var(--bg-cool); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal);">Aspect 2</span>
@@ -770,7 +828,7 @@
   </section>
 
   <!-- SLIDE 19: THE BOUNDARY -->
-  <section data-label="19" data-screen-label="19 — The Boundary" data-speaker-notes="The Boundary represents constraints and performs mutations. A character can walk through a door but not a wall. A key is required to unlock that door. A resource, once used, may not be usable again. In RDF 1.2, these constraints are implemented via SHACL shapes and rules — a formal language for expressing what is and isn't permitted within a graph.">
+  <section data-label="The Boundary" data-screen-label="22 — The Boundary" data-speaker-notes="The Boundary represents constraints and performs mutations. A character can walk through a door but not a wall. A key is required to unlock that door. A resource, once used, may not be usable again. In RDF 1.2, these constraints are implemented via SHACL shapes and rules — a formal language for expressing what is and isn't permitted within a graph.">
     <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Aspect 3</span>
@@ -812,14 +870,13 @@
   </section>
 
   <!-- SLIDE 20: THE PROJECTION LAYER -->
-  <section data-label="20" data-screen-label="20 — The Projection Layer" data-speaker-notes="The Projection Layer is how the holon is seen from outside — mediated by cameras within the scene. A camera is a named, declared observation point: technically a SPARQL CONSTRUCT or SELECT query bound to a named projection IRI, but more richly understood as a first-class entity with a position, angle, and field of view. Cameras are scoped — each sees only part of the scene. They are persistent — updating as the event graph evolves, not one-shot snapshots. And they are composable — a containing holon can aggregate the projections of its contained holons. Cameras bear the same relationship to projections that portals bear to holons: both are mediation boundaries that carry the effects of evolution without exposing internal state directly. In a federated holon network, portals carry events between holons, and cameras determine what those events look like to the receiving side.">
+  <section data-label="The Projection Layer" data-screen-label="23 — The Projection Layer" data-speaker-notes="The Projection Layer is how the holon is seen from outside. It may be a view from the audience, a map of characters from above, the perspective of the scene from a given agent, and so on. Projections are frequently mediated by cameras within the scene — a camera being any means of performing observations. There will usually be multiple projections for any given holon.">
     <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Aspect 4</span>
         <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">The Projection Layer</h2>
         <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.6; opacity: 0.85; text-wrap: pretty;">How the holon is seen from <span style="color: var(--gold);">outside</span> — mediated by cameras within the scene.</p>
         <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty;">A <span style="color: var(--gold);">camera</span> is a designated observation point within the scene — a defined perspective or query that selects and filters what is visible from a given vantage. There will usually be <span style="color: var(--gold);">multiple projections</span> for any holon, each mediated by a different camera — each giving a different view of the same system.</p>
-        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty;">Cameras bear the same relationship to projections that <span style="color: var(--gold);">portals</span> bear to holons — both are mediation boundaries that carry the effects of evolution without exposing internal state directly.</p>
       </div>
       <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px;">
         <div style="display: flex; gap: 24px; align-items: flex-start; width: 100%;">
@@ -877,8 +934,56 @@
     </div>
   </section>
 
+  <!-- SLIDE: UNDERSTANDING CAMERAS -->
+  <section data-label="Understanding Cameras" data-screen-label="24 — Understanding Cameras" data-speaker-notes="The camera metaphor is deliberate. In a stage production a camera does not create the scene — it observes it, from a position, at an angle, with a field of view. In a holon, a camera is a named, declared observation point — technically a SPARQL CONSTRUCT or SELECT query bound to a projection IRI, but better thought of as a first-class entity within the scene. Three properties matter: cameras are scoped, not global — they see only what their position and angle allow; persistent, not one-shot — they keep observing as the event graph evolves, giving a live view; and composable — a containing holon's camera can aggregate the projections of its contained holons' cameras.">
+    <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; flex-direction: column; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: var(--gap-md);">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Projection Layer · Cameras</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Understanding cameras</h2>
+      </div>
+      <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; line-height: 1.5; opacity: 0.85; max-width: 1300px; text-wrap: pretty;">A camera is a named, declared observation point — a <span style="color: var(--gold);">SPARQL query bound to a projection IRI</span>, best understood as a first-class entity within the scene.</p>
+      <div style="flex: 1; display: flex; gap: 32px; align-items: stretch;">
+        <div style="flex: 1; background: oklch(16% 0.05 72); border-radius: 8px; padding: 40px; display: flex; flex-direction: column; gap: 16px; border-left: 3px solid var(--gold);">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 42px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0;">Scoped</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;">Not global. HR's camera on an employee shows benefits; R&amp;D's shows projects. Same agent, different projections — neither more correct.</p>
+        </div>
+        <div style="flex: 1; background: oklch(16% 0.05 72); border-radius: 8px; padding: 40px; display: flex; flex-direction: column; gap: 16px; border-left: 3px solid var(--gold);">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 42px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0;">Persistent</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;">Not one-shot. A camera keeps observing as the event graph evolves — presenting a live, current view rather than a static snapshot.</p>
+        </div>
+        <div style="flex: 1; background: oklch(16% 0.05 72); border-radius: 8px; padding: 40px; display: flex; flex-direction: column; gap: 16px; border-left: 3px solid var(--gold);">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 42px; font-style: italic; font-weight: 300; color: var(--fg); margin: 0;">Composable</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;">A company-level camera aggregates department-level cameras into one view — mirroring how holarchies stack perspectives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: CAMERAS AND PORTALS -->
+  <section data-label="Cameras and Portals" data-screen-label="25 — Cameras and Portals" data-speaker-notes="Cameras bear the same relationship to projections that portals bear to holons. A portal connects one holon to another, letting agent evolution in the source inform the destination without exposing the source's internal structure. A camera connects a holon to its observers, projecting agent state changes outward in curated form without exposing the scene graph. Both are mediation boundaries — neither carries internal state directly, only the effects of evolution. In a federated network, portals carry events between holons and cameras determine what those events look like to the receiving side. This separation is what makes holon architectures composable at scale: federation connects projections rather than merging graphs.">
+    <div style="background: var(--bg-cool); width: 100%; height: 100%; display: flex; flex-direction: column; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: var(--gap-lg);">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal);">Mediation Boundaries</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Cameras and portals</h2>
+      </div>
+      <div style="flex: 1; display: flex; gap: 40px; align-items: stretch;">
+        <div style="flex: 1; background: oklch(16% 0.05 195); border-radius: 8px; padding: 48px; display: flex; flex-direction: column; gap: 20px;">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); font-weight: 500; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase;">Portal</span>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 300; font-style: italic; color: var(--fg); margin: 0; line-height: 1.2;">Holon → holon</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;">Connects one holon to another, letting agent evolution in the source inform the destination — without exposing the source's internal structure.</p>
+        </div>
+        <div style="flex: 1; background: oklch(16% 0.05 195); border-radius: 8px; padding: 48px; display: flex; flex-direction: column; gap: 20px;">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); font-weight: 500; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase;">Camera</span>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 300; font-style: italic; color: var(--fg); margin: 0; line-height: 1.2;">Holon → observers</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6; text-wrap: pretty;">Projects agent state changes outward in curated form — without exposing the scene graph directly to the observer.</p>
+        </div>
+      </div>
+      <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-body); color: var(--fg); margin: 0; text-align: center; opacity: 0.85; text-wrap: pretty; line-height: 1.5;">Both carry the <span style="color: var(--teal);">effects of evolution</span>, not internal state. Federation connects projections — rather than merging graphs.</p>
+    </div>
+  </section>
+
   <!-- SLIDE 21: OPEN & CLOSED HOLONS -->
-  <section data-label="21" data-screen-label="21 — Open &amp; Closed Holons" data-speaker-notes="Holons can be open or closed. An open holon accepts events, validates inputs, and presents dynamic views — analogous to a live, in-memory object. A closed holon no longer accepts events and represents either a complete narrative arc or an interrupted state caused by violations that couldn't be recovered from. This is analogous to an object that has been persisted to storage.">
+  <section data-label="Open &amp; Closed Holons" data-screen-label="26 — Open &amp; Closed Holons" data-speaker-notes="Holons can be open or closed. An open holon accepts events, validates inputs, and presents dynamic views — analogous to a live, in-memory object. A closed holon no longer accepts events and represents either a complete narrative arc or an interrupted state caused by violations that couldn't be recovered from. This is analogous to an object that has been persisted to storage.">
     <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 520px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">State</span>
@@ -944,7 +1049,7 @@
   </section>
 
   <!-- SLIDE 22: HOW OPEN HOLONS EVOLVE -->
-  <section data-label="22" data-screen-label="22 — How Open Holons Evolve" data-speaker-notes="Open holons use several mechanisms to determine their evolution. Bayesian priors base actions on previous behaviors. Active Inference measures the surprise between the expected and active state, driving the system toward lower uncertainty. State machines define rules-based state transitions. External actors are humans or other systems that directly control agents. Once closed, a holon becomes a record — the script of a play, the transcript of a meeting.">
+  <section data-label="How Open Holons Evolve" data-screen-label="27 — How Open Holons Evolve" data-speaker-notes="Open holons use several mechanisms to determine their evolution. Bayesian priors base actions on previous behaviors. Active Inference measures the surprise between the expected and active state, driving the system toward lower uncertainty. State machines define rules-based state transitions. External actors are humans or other systems that directly control agents. Once closed, a holon becomes a record — the script of a play, the transcript of a meeting.">
     <div style="background: var(--bg-warm); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 520px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Evolution</span>
@@ -981,7 +1086,7 @@
   </section>
 
   <!-- SLIDE 23: DATABOOKS -->
-  <section data-label="23" data-screen-label="23 — Databooks" data-speaker-notes="Serialising holons is complex, so several implementations are moving toward a databook approach. A databook uses markdown as its substrate — a metadata header, zero or more code blocks, and regular markdown prose. Databooks can carry all the components of an in-flight holon, or act as data holons holding taxonomy, schema, queries, and application metadata. They are the messaging substrate of a holon architecture — equivalent to an HTML document, a play script, or a musical score. A triple store or object database can be abstracted as a deep databook or a store of multiple databooks.">
+  <section data-label="Databooks" data-screen-label="28 — Databooks" data-speaker-notes="Serialising holons is complex, so several implementations are moving toward a databook approach. A databook uses markdown as its substrate — a metadata header, zero or more code blocks, and regular markdown prose. Databooks can carry all the components of an in-flight holon, or act as data holons holding taxonomy, schema, queries, and application metadata. They are the messaging substrate of a holon architecture — equivalent to an HTML document, a play script, or a musical score. A triple store or object database can be abstracted as a deep databook or a store of multiple databooks.">
     <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 520px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Serialization</span>
@@ -1045,7 +1150,7 @@
   </section>
 
   <!-- SLIDE 24: HOLONS & AI (section break) -->
-  <section data-label="24" data-screen-label="24 — Holons &amp; AI" data-speaker-notes="We turn now to the intersection of holons and AI — three areas where the concepts we've covered become directly applicable: grounding language models, reducing the cost of authoring, and building intelligent bridges to data.">
+  <section data-label="Holons &amp; AI" data-screen-label="29 — Holons &amp; AI" data-speaker-notes="We turn now to the intersection of holons and AI — three areas where the concepts we've covered become directly applicable: grounding language models, reducing the cost of authoring, and building intelligent bridges to data.">
     <div style="background: var(--bg-cool); width: 100%; height: 100%; display: flex; align-items: center;">
       <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px; padding: 0 var(--pad-x);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.28em; text-transform: uppercase; color: var(--teal);">New Directions</span>
@@ -1066,7 +1171,7 @@
   </section>
 
   <!-- SLIDE 25: GROUNDING LLMS -->
-  <section data-label="25" data-screen-label="25 — Grounding LLMs" data-speaker-notes="One major cause of LLM hallucinations is a lack of scope — too much ambiguity in entity resolution. A set of databooks can provide exactly that scope. It identifies what entities are currently in play, records the history of those entities, defines rules and boundaries for state transitions, and determines how information is projected to the user. This won't completely eliminate hallucinations, but will make them considerably less likely — especially in chat interactions.">
+  <section data-label="Grounding LLMs" data-screen-label="30 — Grounding LLMs" data-speaker-notes="One major cause of LLM hallucinations is a lack of scope — too much ambiguity in entity resolution. A set of databooks can provide exactly that scope. It identifies what entities are currently in play, records the history of those entities, defines rules and boundaries for state transitions, and determines how information is projected to the user. This won't completely eliminate hallucinations, but will make them considerably less likely — especially in chat interactions.">
     <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 540px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal);">Hallucinations</span>
@@ -1108,7 +1213,7 @@
   </section>
 
   <!-- SLIDE 26: AI AUTHORING & HOLON BRIDGES -->
-  <section data-label="26" data-screen-label="26 — AI Authoring &amp; Bridges" data-speaker-notes="AI systems can also be used to help compose both data-centered and holon databooks, using a skills.md architecture alongside MCP. This minimises the cost and complexity of authoring considerably. Holon Bridges provide mechanisms for retrieving and updating data stores, especially when coupled with agentic systems and chat. Dialog-based AI especially benefits from the cues databooks provide when generating final output.">
+  <section data-label="AI Authoring &amp; Bridges" data-screen-label="31 — AI Authoring &amp; Bridges" data-speaker-notes="AI systems can also be used to help compose both data-centered and holon databooks, using a skills.md architecture alongside MCP. This minimises the cost and complexity of authoring considerably. Holon Bridges provide mechanisms for retrieving and updating data stores, especially when coupled with agentic systems and chat. Dialog-based AI especially benefits from the cues databooks provide when generating final output.">
     <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 520px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal);">Authoring &amp; Retrieval</span>
@@ -1131,7 +1236,7 @@
   </section>
 
   <!-- SLIDE 27: ARENAS -->
-  <section data-label="27" data-screen-label="27 — Arenas for Holons" data-speaker-notes="Holons provide a structured foundation for complex, stateful systems across many domains.">
+  <section data-label="Arenas for Holons" data-screen-label="32 — Arenas for Holons" data-speaker-notes="Holons provide a structured foundation for complex, stateful systems across many domains.">
     <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 420px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Applications</span>
@@ -1154,7 +1259,7 @@
   </section>
 
   <!-- SLIDE 28: GOALS -->
-  <section data-label="28" data-screen-label="28 — Community Group Goals" data-speaker-notes="The Holon Community Group has four core goals: refine the models, establish conventions, identify implementations and points of commonality, and develop the foundations for a federated distributed data web built on top of the World Wide Web.">
+  <section data-label="Community Group Goals" data-screen-label="33 — Community Group Goals" data-speaker-notes="The Holon Community Group has four core goals: refine the models, establish conventions, identify implementations and points of commonality, and develop the foundations for a federated distributed data web built on top of the World Wide Web.">
     <div style="background: var(--bg-cool); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 460px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal);">Community</span>
@@ -1187,7 +1292,7 @@
   </section>
 
   <!-- SLIDE 29: CONSIDERATIONS -->
-  <section data-label="29" data-screen-label="29 — Considerations" data-speaker-notes="Three key considerations for the community group: the focus is on interoperability, data-format agnostic architecture even if early implementations use RDF 1.2. The HCG specifications are not a W3C Endorsed Recommendation yet, though parts may be presented to the W3C later. IP rights policies are yet to be decided, likely following W3C licensing conventions.">
+  <section data-label="Considerations" data-screen-label="34 — Considerations" data-speaker-notes="Three key considerations for the community group: the focus is on interoperability, data-format agnostic architecture even if early implementations use RDF 1.2. The HCG specifications are not a W3C Endorsed Recommendation yet, though parts may be presented to the W3C later. IP rights policies are yet to be decided, likely following W3C licensing conventions.">
     <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 420px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Process</span>
@@ -1204,14 +1309,14 @@
         </div>
         <div style="background: oklch(16% 0.05 72); border-radius: 8px; padding: 32px 40px; display: flex; flex-direction: column; gap: 12px; border-left: 3px solid var(--gold);">
           <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em;">IP Rights</span>
-          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); margin: 0; line-height: 1.6; text-wrap: pretty;">IP rights policies are awaiting CG consensus, though likely will align with W3C policies with regard to licensing.</p>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); margin: 0; line-height: 1.6; text-wrap: pretty;">IP rights policies are yet to be decided, though likely will align with W3C policies with regard to licensing.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SLIDE 30: WORKING GROUPS -->
-  <section data-label="30" data-screen-label="30 — Working Groups" data-speaker-notes="Five working groups are proposed within the community group: Holon Core Architecture, Databooks, Holon Network Architecture, Validation/Verification/Security Patterns, and Industry Utilisation. Suggestions are open for other groups, or for consolidating these.">
+  <section data-label="Working Groups" data-screen-label="35 — Working Groups" data-speaker-notes="Five working groups are proposed within the community group: Holon Core Architecture, Databooks, Holon Network Architecture, Validation/Verification/Security Patterns, and Industry Utilisation. Suggestions are open for other groups, or for consolidating these.">
     <div style="background: var(--bg); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 460px; display: flex; flex-direction: column; gap: var(--gap-md);">
         <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Organisation</span>
@@ -1258,34 +1363,46 @@
     </div>
   </section>
 
-  <!-- SLIDE 31: MEETING CADENCE -->
-  <section data-label="31" data-screen-label="31 — Meeting Cadence" data-speaker-notes="The HCG meets twice monthly on alternating Fridays, 7–9 AM Pacific / 3–5 PM GMT / 4–6 PM CET. A third session will be added at a time accessible to Eastern Europe and Asia-Pacific participants once membership distribution is established. Agendas are published to GitHub at least 48 hours in advance; minutes within one week. Working groups set their own cadences and report back to the full group at each plenary.">
-    <div style="background: var(--bg-warm); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
+  <!-- SLIDE: MEETING CADENCE -->
+  <section data-label="Meeting Cadence" data-screen-label="36 — Meeting Cadence" data-speaker-notes="The Holon Community Group meets twice monthly on alternating Fridays, 7 to 9 AM Pacific, which is 3 to 5 PM GMT and 4 to 6 PM Central European Time — accessible to Western and Central Europe without unreasonable early starts on the Pacific coast. A third monthly session will be scheduled for participants in Eastern Europe, the Middle East, and Asia-Pacific, once membership distribution is established. All meetings are open to members; agendas are published to the GitHub repository at least 48 hours in advance, and minutes within one week. Working groups meet at their own cadence and report at each plenary.">
+    <div style="background: var(--bg2); width: 100%; height: 100%; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); box-sizing: border-box; gap: 80px;">
       <div style="flex: 0 0 460px; display: flex; flex-direction: column; gap: var(--gap-md);">
-        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Rhythm</span>
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);">Logistics</span>
         <h2 style="font-family: 'Cormorant Garamond', serif; font-size: var(--type-title); font-weight: 300; color: var(--fg); margin: 0; line-height: 1.1;">Meeting cadence</h2>
-        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty; font-style: italic;">Often enough to make progress. Not so often that it becomes a burden.</p>
+        <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.7; text-wrap: pretty;">Working groups meet independently at cadences agreed by their members, and report to the full group at each plenary session.</p>
       </div>
       <div style="flex: 1; display: flex; flex-direction: column; gap: 24px; justify-content: center;">
-        <div style="background: oklch(16% 0.06 72); border-radius: 8px; padding: 32px 40px; display: flex; flex-direction: column; gap: 12px; border-left: 3px solid var(--gold);">
-          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em;">Primary Sessions</span>
-          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); margin: 0; line-height: 1.6; text-wrap: pretty;">Twice monthly · Alternating Fridays · 7:00–9:00 AM Pacific</p>
-          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg-dim); margin: 0; line-height: 1.6;">15:00–17:00 GMT &nbsp;·&nbsp; 16:00–18:00 CET</p>
+        <div style="background: oklch(16% 0.06 72); border-radius: 8px; padding: 32px 40px; display: flex; flex-direction: column; gap: 16px; border-left: 3px solid var(--gold);">
+          <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em;">Plenary · twice monthly</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim);">alternating Fridays</span>
+          </div>
+          <div style="display: flex; gap: 32px; flex-wrap: wrap;">
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--fg);">7:00–9:00 <span style="font-size: 26px; color: var(--fg-dim);">PT</span></span>
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--fg);">15:00–17:00 <span style="font-size: 26px; color: var(--fg-dim);">GMT</span></span>
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--fg);">16:00–18:00 <span style="font-size: 26px; color: var(--fg-dim);">CET</span></span>
+          </div>
         </div>
-        <div style="background: oklch(16% 0.06 72); border-radius: 8px; padding: 32px 40px; display: flex; flex-direction: column; gap: 12px; border-left: 3px solid var(--gold);">
-          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em;">Third Session</span>
-          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); margin: 0; line-height: 1.6; text-wrap: pretty;">A third monthly session will be added at a time accessible to Eastern Europe, the Middle East, and Asia-Pacific participants — timing to be agreed once membership distribution is established.</p>
+        <div style="background: oklch(16% 0.06 72); border-radius: 8px; padding: 32px 40px; display: flex; flex-direction: column; gap: 10px; border-left: 3px solid oklch(74% 0.14 74 / 0.4);">
+          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em;">Third session · planned</span>
+          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); margin: 0; line-height: 1.55; text-wrap: pretty;">A time accessible to Eastern Europe, the Middle East, and Asia-Pacific — set once membership distribution is established.</p>
         </div>
-        <div style="background: oklch(16% 0.06 72); border-radius: 8px; padding: 32px 40px; display: flex; flex-direction: column; gap: 12px; border-left: 3px solid var(--gold);">
-          <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--gold); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em;">Process</span>
-          <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-small); color: var(--fg); margin: 0; line-height: 1.6; text-wrap: pretty;">Agendas published to GitHub ≥ 48 hours in advance · Minutes published within one week · Working groups set their own cadence and report at each plenary.</p>
+        <div style="display: flex; gap: 24px;">
+          <div style="flex: 1; background: oklch(13% 0.03 72); border-radius: 8px; padding: 24px 32px; display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--gold);">48h</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); line-height: 1.4;">Agendas published ahead</span>
+          </div>
+          <div style="flex: 1; background: oklch(13% 0.03 72); border-radius: 8px; padding: 24px 32px; display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--gold);">1wk</span>
+            <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: var(--type-label); color: var(--fg-dim); line-height: 1.4;">Minutes published after</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SLIDE 32: THANK YOU -->
-  <section data-label="32" data-screen-label="32 — Thank You" data-speaker-notes="Thank you for your involvement. Questions and discussion welcome.">
+  <!-- SLIDE 31: THANK YOU -->
+  <section data-label="Thank You" data-screen-label="37 — Thank You" data-speaker-notes="Thank you for your involvement. Questions and discussion welcome.">
     <div style="background: var(--bg-warm); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 36px; padding: 0 var(--pad-x); box-sizing: border-box;">
       <div style="width: 60px; height: 1px; background: var(--gold); opacity: 0.5;"></div>
       <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 96px; font-weight: 300; color: var(--fg); margin: 0; text-align: center; line-height: 1.05; letter-spacing: -1px;">Thank you for<br>your involvement.</h2>
